@@ -1,0 +1,555 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8" theme-name="Stellar" theme-version="1.26.8">
+  
+  <meta name="generator" content="Hexo 7.1.1">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Diy一台带Ups功能的Nas - 时光印记</title>
+
+  
+    <meta name="description" content="前言​	由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。  一、确定需求基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。  Ups功能​	ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必不可少的，目前市面上的ups基本上都是交流电UPS，缺点有很多，体积大、空载的功耗高转化率低,市面上又">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Diy一台带Ups功能的Nas">
+<meta property="og:url" content="http://example.com/2023/04/18/Diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/index.html">
+<meta property="og:site_name" content="时光印记">
+<meta property="og:description" content="前言​	由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。  一、确定需求基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。  Ups功能​	ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必不可少的，目前市面上的ups基本上都是交流电UPS，缺点有很多，体积大、空载的功耗高转化率低,市面上又">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703416360445.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417129065.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417275972.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417401347.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417513487.png">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417774783.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417789896.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703418073406.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703418529291.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703418535703.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703419110533.png">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417401347.jpg">
+<meta property="og:image" content="http://img.msx.ink/mmexport1703419206636.jpg">
+<meta property="article:published_time" content="2023-04-18T00:08:33.000Z">
+<meta property="article:modified_time" content="2023-12-24T12:21:33.573Z">
+<meta property="article:author" content="moshuxv">
+<meta property="article:tag" content="Diy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.msx.ink/mmexport1703416360445.jpg">
+  
+  
+  
+  <meta name="keywords" content="Diy">
+
+  <!-- feed -->
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.26.8">
+
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="undefined" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">时光印记</div><div class="sub cap">时光印记</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/02/28/%E4%BD%BF%E7%94%A8CDN%E6%8A%80%E6%9C%AF%E5%8A%A0%E9%80%9F%E7%BD%91%E7%AB%99/"><span class="title">使用CDN技术加速网站</span></a><a class="item title" href="/2023/12/31/%E5%BF%BD%E7%84%B6%E9%97%B4%E5%A5%BD%E6%83%B3%E5%9B%9E%E5%8E%BB/"><span class="title">忽然间好想回去</span></a><a class="item title" href="/2023/05/07/c%E8%AE%A1%E5%88%92/"><span class="title">C计划</span></a><a class="item title" href="/2023/04/18/Diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/"><span class="title">Diy一台带Ups功能的Nas</span></a><a class="item title" href="/2023/12/10/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/"><span class="title">帮朋友做的海报</span></a><a class="item title" href="/2023/08/29/%E9%A9%BE%E9%A9%B6%E8%AF%81%E5%88%B0%E6%89%8B%E5%90%8E%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%A4%9A%E6%9C%88%E6%97%B6%E9%97%B4%E9%87%8C/"><span class="title">驾驶证到手后的两个多月时间里</span></a><a class="item title" href="/2020/01/27/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><span class="title">Cisco路由学习笔记</span></a><a class="item title" href="/2021/03/06/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/"><span class="title">准备上交国家了!</span></a><a class="item title" href="/2020/03/29/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/"><span class="title">正能量健身主题餐厅项目计划书</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2023-04-18T00:08:33.000Z">2023-04-18</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2023-12-24T12:21:33.573Z">2023-12-24</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Diy一台带Ups功能的Nas</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​	由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703416360445.jpg"></p>
+<h2 id="一、确定需求"><a href="#一、确定需求" class="headerlink" title="一、确定需求"></a>一、确定需求</h2><h6 id="基本需求"><a href="#基本需求" class="headerlink" title="基本需求"></a>基本需求</h6><ul>
+<li>能运行虚拟机</li>
+<li>具有一定的硬件解码能力</li>
+<li>低功耗。</li>
+</ul>
+<h6 id="Ups功能"><a href="#Ups功能" class="headerlink" title="Ups功能"></a>Ups功能</h6><p>​	ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必不可少的，目前市面上的ups基本上都是交流电UPS，缺点有很多，体积大、空载的功耗高转化率低,市面上又基本上找不到适合nas用的大功率直流UPS，所以我打算自己DIY。</p>
+<h6 id="电量统计功能"><a href="#电量统计功能" class="headerlink" title="电量统计功能"></a>电量统计功能</h6><p>​	nas是365天不间断运行的，对于它的耗电量，我心里也是充满了好奇。所以我觉得有必要加上电量统计功能，方便知道用了多少电。</p>
+<h2 id="二、方案制定"><a href="#二、方案制定" class="headerlink" title="二、方案制定"></a>二、方案制定</h2><h5 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h5><ul>
+<li><p>nas的主要硬件方面我选择了映泰j4125+8G内存的组合，加一根16G的傲腾ssd做缓存，J4125在黑群晖920+下可以免打驱动使用核显，功耗TPD10W。</p>
+</li>
+<li><p>因为Nas还要实现ups功能，所以机箱除了要塞下基本硬件外，还要塞下ups的电池组，所以机箱的内部空间必须得大，在我的精挑细选下，最终选择了这款机箱：</p>
+</li>
+</ul>
+<p>  <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417129065.jpg"></p>
+<p>因为这款机箱的配色我不太喜欢，所以我对机箱重新进行了喷漆</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417275972.jpg"></p>
+<p>喷完漆后的效果:</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417401347.jpg"></p>
+<h5 id="ups功能"><a href="#ups功能" class="headerlink" title="ups功能"></a>ups功能</h5><h6 id="ups模块"><a href="#ups模块" class="headerlink" title="ups模块"></a>ups模块</h6><p>​	市面上基本上找不到大功率直流ups模块,逛淘宝的时候只找到了一款给路由器用的Ups模块，最大功率支持12V 4A</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417513487.png"></p>
+<p>但是12X4＝48w 功率还是不够高怎么办？<br>那就把两块ups模块并联起来呗，并联之后功率叠加 12*8&#x3D;96w</p>
+<h6 id="电池组"><a href="#电池组" class="headerlink" title="电池组"></a>电池组</h6><p>​	 电池在这里的作用是储存电能，当停电的时候由电池给nas供电，在这里我用了3颗21700电池进行串联，单颗电池容量18.5wh 18.5*3&#x3D;55.5，也就是说能够支持55.5w的电器使用一个小时，由于没有点焊机，所以我自己用亚克力板做了一个电池盒，将电池串联起来。</p>
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417774783.jpg" style="zoom:150%;" />
+
+<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417789896.jpg" style="zoom:33%;" />
+
+<h6 id="电源"><a href="#电源" class="headerlink" title="电源"></a>电源</h6><p>  想要低功那就只能选择DC-ATX方案，市面上的dc电源质量参差不齐，在多多比较后我选择了微软xbox电源。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703418073406.jpg"></p>
+<h6 id="电量统计"><a href="#电量统计" class="headerlink" title="电量统计"></a>电量统计</h6><p>​	由于技术不够，不会设计电路，在电量统计功能方面，我用智能插座来统计电量，选用了小米智能插座3。</p>
+<h2 id="三、组装环节"><a href="#三、组装环节" class="headerlink" title="三、组装环节"></a>三、组装环节</h2><p>把智能插座和电源的外壳拆除后，把所有的元器件焊接在一起。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703418529291.jpg"></p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703418535703.jpg"></p>
+<p>方框里的元器件分别是：<br>①拆除了外壳的小米智能插座3<br>②风扇调速模块；电源在运行的时候温度是很烫的，所以我加装了一个风扇给电源降温，模块带温控功能，能根据机箱环境温度进行调节转速速或者停止工作。<br>③拆除了外壳的xbox电源。<br>④两块并联的UPS模块。<br>⑤电池组</p>
+<p>接线图：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703419110533.png"></p>
+<p>最终效果：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703417401347.jpg"></p>
+<p>支持电量信息统计：</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="http://img.msx.ink/mmexport1703419206636.jpg"></p>
+<h6 id="停电后自动关机功能"><a href="#停电后自动关机功能" class="headerlink" title="停电后自动关机功能"></a>停电后自动关机功能</h6><p>​	ups理论上能支持nas使用一个小时左右，但是万一停电时间比较长，ups的电量也会有耗尽的时候，怎么才能让nas在停电的时候自动关机呢？</p>
+<p>​	我的思路是写一个脚本，每隔2分钟ping一下路由器，如果停电了路由器是不会回应的，如果路由器没有回应，就执行关机命令，具体做法如下：</p>
+<ol>
+<li>首先ssh 连接nas，在&#x2F;mnt目录下创建一个名为autoshutdown.sh的文件，并设置文件的权限为755:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir autoshutdown.sh /mnt</span><br><span class="line">chmod -r 755 /mnt/autoshutdown.sh</span><br></pre></td></tr></table></figure>
+
+<p>   2.用vi编辑器编辑autoshutdown.sh，在文件里输入下面的脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">MonitorIP=192.168.1.1</span><br><span class="line">DelayTime=120s</span><br><span class="line">ping -c 1 <span class="variable">$MonitorIP</span> &gt; /dev/null</span><br><span class="line">ret=$?</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$ret</span> -eq 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line"><span class="built_in">echo</span> ‘ AC Power OK ! ‘</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">synologset1 sys warn 0x11600036</span><br><span class="line"><span class="built_in">echo</span> ‘ AC Power maybe off, checking again after 1 minutes ! ‘</span><br><span class="line"><span class="built_in">sleep</span> <span class="variable">$DelayTime</span></span><br><span class="line">ping -c 1 <span class="variable">$MonitorIP</span> &gt; /dev/null</span><br><span class="line">ret=$?</span><br><span class="line"><span class="keyword">if</span> [ <span class="variable">$ret</span> -eq 0 ]</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">synologset1 sys warn 0x11600037</span><br><span class="line"><span class="built_in">echo</span> ‘ Checkagain, AC Power OK ! ‘</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">synologset1 sys warn 0x11600035</span><br><span class="line">poweroff</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>   3.设置定时运行，用vi修改&#x2F;etc&#x2F;目录下的系统定时文件crontab，添加如下内容后重启nas</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">root        /mnt/autoshutdown.sh</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/05/07/c%E8%AE%A1%E5%88%92/">C计划</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2021/03/06/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/">准备上交国家了!</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">moshuxv</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.26.8">Stellar 1.26.8</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%A1%AE%E5%AE%9A%E9%9C%80%E6%B1%82"><span class="toc-text">一、确定需求</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%9C%80%E6%B1%82"><span class="toc-text">基本需求</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Ups%E5%8A%9F%E8%83%BD"><span class="toc-text">Ups功能</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%B5%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD"><span class="toc-text">电量统计功能</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%96%B9%E6%A1%88%E5%88%B6%E5%AE%9A"><span class="toc-text">二、方案制定</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD"><span class="toc-text">基本功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ups%E5%8A%9F%E8%83%BD"><span class="toc-text">ups功能</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#ups%E6%A8%A1%E5%9D%97"><span class="toc-text">ups模块</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%B5%E6%B1%A0%E7%BB%84"><span class="toc-text">电池组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%B5%E6%BA%90"><span class="toc-text">电源</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%94%B5%E9%87%8F%E7%BB%9F%E8%AE%A1"><span class="toc-text">电量统计</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%BB%84%E8%A3%85%E7%8E%AF%E8%8A%82"><span class="toc-text">三、组装环节</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%81%9C%E7%94%B5%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA%E5%8A%9F%E8%83%BD"><span class="toc-text">停电后自动关机功能</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.bootcdn.net/ajax/libs/jquery/3.7.1/jquery.min.js`,
+    marked: `https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.26.8" async></script>
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.bootcdn.net/ajax/libs/flying-pages/2.1.2/flying-pages.min.js"></script><script defer src="https://cdn.bootcdn.net/ajax/libs/vanilla-lazyload/17.8.4/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.min.css`,
+    js: `https://cdn.bootcdn.net/ajax/libs/fancyapps-ui/5.0.22/fancybox/fancybox.umd.min.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || null
+        }
+      });
+    })
+  }
+</script><script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script><script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
