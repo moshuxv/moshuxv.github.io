@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Cisco路由学习笔记 | Moshuxv&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="OSI/TCP分层 1、OSI 1层：物理层：双绞线、集线器、转换器、中继器、 2层：链路层：网卡(mac地址)、交换机、网桥、 3层：网络层：路由器、IP地址、 4层：传输层：tcp&amp;udp、专门为应用层服务。 5层：会话层 6层：表示层 7层：应用层：为软件提供的接口（端口）http">
+<meta name="author" content="moshuxv">
+<link rel="canonical" href="https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://msx.ink/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://msx.ink/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://msx.ink/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://msx.ink/apple-touch-icon.png">
+<link rel="mask-icon" href="https://msx.ink/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="Cisco路由学习笔记" />
+<meta property="og:description" content="OSI/TCP分层 1、OSI 1层：物理层：双绞线、集线器、转换器、中继器、 2层：链路层：网卡(mac地址)、交换机、网桥、 3层：网络层：路由器、IP地址、 4层：传输层：tcp&amp;udp、专门为应用层服务。 5层：会话层 6层：表示层 7层：应用层：为软件提供的接口（端口）http" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-01-27T00:17:58+08:00" />
+<meta property="article:modified_time" content="2020-01-27T00:17:58+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cisco路由学习笔记"/>
+<meta name="twitter:description" content="OSI/TCP分层 1、OSI 1层：物理层：双绞线、集线器、转换器、中继器、 2层：链路层：网卡(mac地址)、交换机、网桥、 3层：网络层：路由器、IP地址、 4层：传输层：tcp&amp;udp、专门为应用层服务。 5层：会话层 6层：表示层 7层：应用层：为软件提供的接口（端口）http"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Posts",
+          "item": "https://msx.ink/posts/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Cisco路由学习笔记",
+      "item": "https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Cisco路由学习笔记",
+  "name": "Cisco路由学习笔记",
+  "description": "OSI/TCP分层 1、OSI 1层：物理层：双绞线、集线器、转换器、中继器、 2层：链路层：网卡(mac地址)、交换机、网桥、 3层：网络层：路由器、IP地址、 4层：传输层：tcp\u0026amp;udp、专门为应用层服务。 5层：会话层 6层：表示层 7层：应用层：为软件提供的接口（端口）http",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "OSI/TCP分层 1、OSI 1层：物理层：双绞线、集线器、转换器、中继器、\n2层：链路层：网卡(mac地址)、交换机、网桥、\n3层：网络层：路由器、IP地址、\n4层：传输层：tcp\u0026udp、专门为应用层服务。\n5层：会话层\n6层：表示层\n7层：应用层：为软件提供的接口（端口）https(443)、dns…..\n2、TCP 1层：网络接口层：对应osi物理层\u0026链路层.\n2层：网络互联层：对应osi网络层.\n3层：传输层:对应osi传输层.\n4层：应用层:对应osi会话层、表示层、应用层、\nTCP\u0026UDP 1.TCP（传输控制协议) 面向连接、可靠传输、流控及窗口机制、\n应用：浏览器、文件传输、Email、\n2.UDP：(用户数据报协议) 无连接、不可靠传输、尽力而为传输、\n应用：视频流、DNS、IP语音、\nIP 1、分类 A:1-126 255.0.0.0/8\nB:128-191 255.255.0.0/16\nC:192-223 255.255.255.0/24\nD:224-239（组播地址）\nE:240-255（科研保留）\n2、私网地址 A：10.0.0.0-10.255.255.255\nB:172.16.0.0-172.31.255.255.255\nC:192.168.0.0-192.168.255.255\n3、特殊 127:环回IP地址，分配给操作系统\n0.0.0.0:代表所有地址\n255.255.255.255：全网广播地址\n4、组成： 网络位：代表当前网段主机所在的组织\n主机位：代表当前网段内可用于主机的IP\n5、区分网络位与主机位： 通过子网掩码，将IP＆子网掩码进行与运算，计算结果不变的为网络位，归零为主机位。\n6、 子网划分 1.VLSM 通过将主类掩码延长，来达到减少主机位，增加子网数的目的。\n2.常用数字： 2^0=1; 2^1=2; 2^2=4; 2^3=8; 2^4=16; 2^5=32; 2^6=64; 2^7=128;\n3.用法： 确认主机地址数量并匹配合适地址区间\n用256减去匹配到的地址区间得出掩码\n确认网络地址、广播地址、可用主机范围、\n双绞线 1、T-568A线序: 绿白——绿——橙白——蓝——蓝白——橙——棕白——棕\n2、T-568B线序: 橙白——橙——绿白——蓝——蓝白——绿——棕白——棕\n路由 1、协议 距离矢量协议：传递路由表（路由不知道网络拓扑，只知道找传递路由表给自己的路由）。\n链路状态协议：传递数据库。（每台路由都知道网络拓扑）\n2、接口 ethernet（以太网口）、fastEthernet（快速以太网）、serial（串行链路口）\n3、路由表 C:直连网段路由； S：静态路由； S*:默认路由； I：igrp; O:OSPF\n4、管理距离越小路由优先级越高 路由配置常用命令 1、模式 router\u003e //普通模式 router# //特权模式,在普通模式输入：enable进入 router(config)# //全局模式，在特权模式输入：config terminal进入 Router(config-if)# //端口模式， 在特权模式输入interface +端口号 进入 Router(config-line)# //线路模式，在全局模式输入命令：line console 0 进入 Router(config-router)# //路由引擎模式，在全局模式输入命令：router rip进入 2、show router#show running-config //显示正在运行的配置 Router#show ip interface brief //显示路由接口配置 router#show ip route //查看路由表 3、工程三招 router(config)#no ip domain -lookup //禁用dns解析 router(config)#ip domain -lookup //开启dns解析 Router(config)#line console 0 Router(config-line)#logging synchronous //log当前显示信息同步 Router(config-line)#no exec-timeout //设置永不超时 4、简单配置 命令首字母+？ //查询命令 命令前面+no //删除命令 router(config)#enable password *** //设置进入特权模式的密码 router(config)#enable secret *** //设置进入特权模式的密码（加密） router(config)#hostname ** //重命名router(config) router(config)#interface s0/0 //进入端口s0/0 router(config)#intface loopback ？ //创建环回接口 router(config-if)#ip address IP 子网掩码 //配置IP和子网掩码 router(config-if)#no shutdown //启动端口 router#exit //退出到上一级 静态路由 1、静态路由配置命令：\nR1(config)#ip route 目的IP 子网掩码 下一跳地址 2、静态默认路由：\nR1(config)#ip route 0.0.0.0 0.0.0.0 下一跳地址 Rip 1、广播：一对所有，组播：一对多，单播：一对一。\n2、Rip\n度量值：跳数（超过15跳不可达）。\nRIP v1有类路由，RIP v2无类路由，（有类路由：不传子网掩码，无类路由：传递子网掩码）。\n使用UDP传输\n源目的端口号为520\nRIP协议号为17\n消息形式：请求消息，响应消息。\n默认支持等价负载均衡：4，最大6.\n管理距离120\n3、Rip计时器\n更新计时器（update）：30s更新路由表。\n无效计时器（invalid）:180s不刷新则将该路由条目的度量值设置为16。\n刷新计时器（flush）：默认240s，比无效计时器长60s。刷新后路由条目则删除。\n抑制计时器（hold-down）：180s。\n4、Rip防环机制：\n水平分割，路由毒化，触发更新。\n5、配置命令：\nRouter(config)#router rip //启动Rip进程 Router(config-router)#version 2 //定义为版本2 Router(config-router)#no auto-summary //关闭自动汇总 Router(config-router)#network network-number //哪些网络参与路由 OSPF 1、OSPF V2\n链路状态协议、\n度量值cost=10^8/接口带宽\n使用hello包简历邻居，10s里哟个组播发送一次，组播地址224.0.0.5\n管理距离110\n无自动汇总\n协议号：89\n2、五个数据包\nHello数据包，功能:用于邻居的发现、建立与保活（10s维持邻居，40s超时）\nDBD数据包，功能：描述数据库的目录信息\nLSR数据包，功能：请求在DBD交换过程中发现的本路由器中没有的或已过时的LSA包细节（请求）\nLSU数据包，功能：用于LSA的洪泛和响应LSR（更新）\nLSAck数据包，功能：对LSU的确认（更新后回复确认）\n3、配置命令\nR3(config)#router ospf 1 //启动ospf进程，本地进程号为1 R1(config-router)#router-id * //配置routerid（可选） R3(config-router)#network 23.1.1.2 0.0.0.255 area 0 //宣告网段；反掩码；宣告进的区域。 4、查看ospf建立的邻居关系\nR1#show ip ospf neighbor Eigrp 1、三张表\nIP路由表：从EIGRP拓扑表以及其他路由协议进程（如RIP、OSPF等）选出的所有最优路由的列表\n拓扑表：从每个EIGRP邻居学习的所有路由的列表\n邻居表：与本路由器建立EIGRP邻居关系的直连路由器的列表\n2、管理距离\n内部：90\n外部：170\n汇总：5\n3、Eigrp\n组播地址：224.0.0.10\n协议号：88\n高级距离矢量协议\n4、配置\nRouter(config)#router eigrp 200 Router(config-router)#network Router(config-router)#no auto-summaryxxxxxxxxxx Router(config)#router eigrp Router(config-router)#networkRouter(config-router)#no auto-summary ",
+  "wordCount" : "2283",
+  "inLanguage": "zh",
+  "datePublished": "2020-01-27T00:17:58+08:00",
+  "dateModified": "2020-01-27T00:17:58+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "moshuxv"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Moshuxv's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://msx.ink/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    (function () {
+        let  arr,reg = new RegExp("(^| )"+"change-themes"+"=([^;]*)(;|$)");
+        if(arr = document.cookie.match(reg)) {
+        } else {
+            if (new Date().getHours() >= 19 || new Date().getHours() < 6) {
+                document.body.classList.add('dark');
+                localStorage.setItem("pref-theme", 'dark');
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.setItem("pref-theme", 'light');
+            }
+        }
+    })()
+
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://msx.ink/" accesskey="h" title="Moshuxv&#39;s Blog (Alt + H)">Moshuxv&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://msx.ink/" title="主页">
+                <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://msx.ink/archives/" title="时间轴">
+                <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://msx.ink/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://msx.ink/about" title="关于">
+                <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://msx.ink/"> 主页</a>&nbsp;»&nbsp;<a href="https://msx.ink/posts/">Posts</a></div>
+            <h1 class="post-title">
+                Cisco路由学习笔记
+            </h1>
+            <div class="post-meta">
+
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>2020-01-27
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>2283字
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>5分钟
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>moshuxv
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                <a href="https://msx.ink/tags/tech/" style="color: var(--secondary)!important;">Tech</a>
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo/1.5.8/twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "https://msx.ink/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#ositcp%e5%88%86%e5%b1%82" aria-label="OSI/TCP分层">OSI/TCP分层</a></li>
+                <li>
+                    <a href="#1osi" aria-label="1、OSI">1、OSI</a><ul>
+                        
+                <li>
+                    <a href="#2tcp" aria-label="2、TCP">2、TCP</a></li></ul>
+                </li>
+                <li>
+                    <a href="#tcpudp" aria-label="TCP&amp;amp;UDP">TCP&amp;UDP</a><ul>
+                        
+                <li>
+                    <a href="#1tcp%e4%bc%a0%e8%be%93%e6%8e%a7%e5%88%b6%e5%8d%8f%e8%ae%ae" aria-label="1.TCP（传输控制协议)">1.TCP（传输控制协议)</a></li>
+                <li>
+                    <a href="#2udp%e7%94%a8%e6%88%b7%e6%95%b0%e6%8d%ae%e6%8a%a5%e5%8d%8f%e8%ae%ae" aria-label="2.UDP：(用户数据报协议)">2.UDP：(用户数据报协议)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#ip" aria-label="IP">IP</a></li>
+                <li>
+                    <a href="#1%e5%88%86%e7%b1%bb" aria-label="1、分类">1、分类</a></li>
+                <li>
+                    <a href="#2%e7%a7%81%e7%bd%91%e5%9c%b0%e5%9d%80" aria-label="2、私网地址">2、私网地址</a></li>
+                <li>
+                    <a href="#3%e7%89%b9%e6%ae%8a" aria-label="3、特殊">3、特殊</a><ul>
+                        
+                <li>
+                    <a href="#4%e7%bb%84%e6%88%90" aria-label="4、组成：">4、组成：</a></li>
+                <li>
+                    <a href="#5%e5%8c%ba%e5%88%86%e7%bd%91%e7%bb%9c%e4%bd%8d%e4%b8%8e%e4%b8%bb%e6%9c%ba%e4%bd%8d" aria-label="5、区分网络位与主机位：">5、区分网络位与主机位：</a></li>
+                <li>
+                    <a href="#6-%e5%ad%90%e7%bd%91%e5%88%92%e5%88%86" aria-label="6、 子网划分">6、 子网划分</a><ul>
+                        
+                <li>
+                    <a href="#1vlsm" aria-label="1.VLSM">1.VLSM</a></li>
+                <li>
+                    <a href="#2%e5%b8%b8%e7%94%a8%e6%95%b0%e5%ad%97" aria-label="2.常用数字：">2.常用数字：</a></li>
+                <li>
+                    <a href="#3%e7%94%a8%e6%b3%95" aria-label="3.用法：">3.用法：</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%8f%8c%e7%bb%9e%e7%ba%bf" aria-label="双绞线">双绞线</a><ul>
+                        
+                <li>
+                    <a href="#1t-568a%e7%ba%bf%e5%ba%8f" aria-label="1、T-568A线序:">1、T-568A线序:</a></li>
+                <li>
+                    <a href="#2t-568b%e7%ba%bf%e5%ba%8f" aria-label="2、T-568B线序:">2、T-568B线序:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%b7%af%e7%94%b1" aria-label="路由">路由</a><ul>
+                        
+                <li>
+                    <a href="#1%e5%8d%8f%e8%ae%ae" aria-label="1、协议">1、协议</a></li>
+                <li>
+                    <a href="#2%e6%8e%a5%e5%8f%a3" aria-label="2、接口">2、接口</a></li>
+                <li>
+                    <a href="#3%e8%b7%af%e7%94%b1%e8%a1%a8" aria-label="3、路由表">3、路由表</a></li>
+                <li>
+                    <a href="#4%e7%ae%a1%e7%90%86%e8%b7%9d%e7%a6%bb%e8%b6%8a%e5%b0%8f%e8%b7%af%e7%94%b1%e4%bc%98%e5%85%88%e7%ba%a7%e8%b6%8a%e9%ab%98" aria-label="4、管理距离越小路由优先级越高">4、管理距离越小路由优先级越高</a></li>
+                <li>
+                    <a href="#%e8%b7%af%e7%94%b1%e9%85%8d%e7%bd%ae%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4" aria-label="路由配置常用命令">路由配置常用命令</a><ul>
+                        
+                <li>
+                    <a href="#1%e6%a8%a1%e5%bc%8f" aria-label="1、模式">1、模式</a></li>
+                <li>
+                    <a href="#2show" aria-label="2、show">2、show</a></li>
+                <li>
+                    <a href="#3%e5%b7%a5%e7%a8%8b%e4%b8%89%e6%8b%9b" aria-label="3、工程三招">3、工程三招</a></li>
+                <li>
+                    <a href="#4%e7%ae%80%e5%8d%95%e9%85%8d%e7%bd%ae" aria-label="4、简单配置">4、简单配置</a></li>
+                <li>
+                    <a href="#%e9%9d%99%e6%80%81%e8%b7%af%e7%94%b1" aria-label="静态路由">静态路由</a></li>
+                <li>
+                    <a href="#rip" aria-label="Rip">Rip</a></li>
+                <li>
+                    <a href="#ospf" aria-label="OSPF">OSPF</a></li>
+                <li>
+                    <a href="#eigrp" aria-label="Eigrp">Eigrp</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h2 id="ositcp分层">OSI/TCP分层<a hidden class="anchor" aria-hidden="true" href="#ositcp分层">#</a></h2>
+<h2 id="1osi">1、OSI<a hidden class="anchor" aria-hidden="true" href="#1osi">#</a></h2>
+<p>1层：物理层：双绞线、集线器、转换器、中继器、</p>
+<p>2层：链路层：网卡(mac地址)、交换机、网桥、</p>
+<p>3层：网络层：路由器、IP地址、</p>
+<p>4层：传输层：tcp&amp;udp、专门为应用层服务。</p>
+<p>5层：会话层</p>
+<p>6层：表示层</p>
+<p>7层：应用层：为软件提供的接口（端口）https(443)、dns&hellip;..</p>
+<h3 id="2tcp">2、TCP<a hidden class="anchor" aria-hidden="true" href="#2tcp">#</a></h3>
+<p>1层：网络接口层：对应osi物理层&amp;链路层.</p>
+<p>2层：网络互联层：对应osi网络层.</p>
+<p>3层：传输层:对应osi传输层.</p>
+<p>4层：应用层:对应osi会话层、表示层、应用层、</p>
+<h2 id="tcpudp">TCP&amp;UDP<a hidden class="anchor" aria-hidden="true" href="#tcpudp">#</a></h2>
+<h3 id="1tcp传输控制协议">1.TCP（传输控制协议)<a hidden class="anchor" aria-hidden="true" href="#1tcp传输控制协议">#</a></h3>
+<p>面向连接、可靠传输、流控及窗口机制、</p>
+<p>应用：浏览器、文件传输、Email、</p>
+<h3 id="2udp用户数据报协议">2.UDP：(用户数据报协议)<a hidden class="anchor" aria-hidden="true" href="#2udp用户数据报协议">#</a></h3>
+<p>无连接、不可靠传输、尽力而为传输、</p>
+<p>应用：视频流、DNS、IP语音、</p>
+<h2 id="ip">IP<a hidden class="anchor" aria-hidden="true" href="#ip">#</a></h2>
+<h2 id="1分类">1、分类<a hidden class="anchor" aria-hidden="true" href="#1分类">#</a></h2>
+<p>A:1-126 255.0.0.0/8</p>
+<p>B:128-191 255.255.0.0/16</p>
+<p>C:192-223 255.255.255.0/24</p>
+<p>D:224-239（组播地址）</p>
+<p>E:240-255（科研保留）</p>
+<h2 id="2私网地址">2、私网地址<a hidden class="anchor" aria-hidden="true" href="#2私网地址">#</a></h2>
+<p>A：10.0.0.0-10.255.255.255</p>
+<p>B:172.16.0.0-172.31.255.255.255</p>
+<p>C:192.168.0.0-192.168.255.255</p>
+<h2 id="3特殊">3、特殊<a hidden class="anchor" aria-hidden="true" href="#3特殊">#</a></h2>
+<p>127:环回IP地址，分配给操作系统</p>
+<p>0.0.0.0:代表所有地址</p>
+<p>255.255.255.255：全网广播地址</p>
+<h3 id="4组成">4、组成：<a hidden class="anchor" aria-hidden="true" href="#4组成">#</a></h3>
+<p>网络位：代表当前网段主机所在的组织</p>
+<p>主机位：代表当前网段内可用于主机的IP</p>
+<h3 id="5区分网络位与主机位">5、区分网络位与主机位：<a hidden class="anchor" aria-hidden="true" href="#5区分网络位与主机位">#</a></h3>
+<p>通过子网掩码，将IP＆子网掩码进行与运算，计算结果不变的为网络位，归零为主机位。</p>
+<h3 id="6-子网划分">6、 子网划分<a hidden class="anchor" aria-hidden="true" href="#6-子网划分">#</a></h3>
+<h4 id="1vlsm">1.VLSM<a hidden class="anchor" aria-hidden="true" href="#1vlsm">#</a></h4>
+<p>通过将主类掩码延长，来达到减少主机位，增加子网数的目的。</p>
+<h4 id="2常用数字">2.常用数字：<a hidden class="anchor" aria-hidden="true" href="#2常用数字">#</a></h4>
+<p>2^0=1; 2^1=2; 2^2=4; 2^3=8; 2^4=16; 2^5=32; 2^6=64; 2^7=128;</p>
+<h4 id="3用法">3.用法：<a hidden class="anchor" aria-hidden="true" href="#3用法">#</a></h4>
+<p>确认主机地址数量并匹配合适地址区间</p>
+<p>用256减去匹配到的地址区间得出掩码</p>
+<p>确认网络地址、广播地址、可用主机范围、</p>
+<h2 id="双绞线">双绞线<a hidden class="anchor" aria-hidden="true" href="#双绞线">#</a></h2>
+<h3 id="1t-568a线序">1、T-568A线序:<a hidden class="anchor" aria-hidden="true" href="#1t-568a线序">#</a></h3>
+<p>绿白——绿——橙白——蓝——蓝白——橙——棕白——棕</p>
+<h3 id="2t-568b线序">2、T-568B线序:<a hidden class="anchor" aria-hidden="true" href="#2t-568b线序">#</a></h3>
+<p>橙白——橙——绿白——蓝——蓝白——绿——棕白——棕</p>
+<h2 id="路由">路由<a hidden class="anchor" aria-hidden="true" href="#路由">#</a></h2>
+<h3 id="1协议">1、协议<a hidden class="anchor" aria-hidden="true" href="#1协议">#</a></h3>
+<p>距离矢量协议：传递路由表（路由不知道网络拓扑，只知道找传递路由表给自己的路由）。</p>
+<p>链路状态协议：传递数据库。（每台路由都知道网络拓扑）</p>
+<h3 id="2接口">2、接口<a hidden class="anchor" aria-hidden="true" href="#2接口">#</a></h3>
+<p>ethernet（以太网口）、fastEthernet（快速以太网）、serial（串行链路口）</p>
+<h3 id="3路由表">3、路由表<a hidden class="anchor" aria-hidden="true" href="#3路由表">#</a></h3>
+<p>C:直连网段路由； S：静态路由； S*:默认路由； I：igrp; O:OSPF</p>
+<h3 id="4管理距离越小路由优先级越高">4、管理距离越小路由优先级越高<a hidden class="anchor" aria-hidden="true" href="#4管理距离越小路由优先级越高">#</a></h3>
+<h3 id="路由配置常用命令">路由配置常用命令<a hidden class="anchor" aria-hidden="true" href="#路由配置常用命令">#</a></h3>
+<h4 id="1模式">1、模式<a hidden class="anchor" aria-hidden="true" href="#1模式">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  router&gt;        //普通模式
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router#        //特权模式,在普通模式输入：enable进入
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#      //全局模式，在特权模式输入：config terminal进入
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-if)#    //端口模式， 在特权模式输入interface +端口号 进入
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-line)#    //线路模式，在全局模式输入命令：line console 0 进入
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-router)#   //路由引擎模式，在全局模式输入命令：router rip进入
+</span></span></code></pre></div><h4 id="2show">2、show<a hidden class="anchor" aria-hidden="true" href="#2show">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  router#show  running-config    //显示正在运行的配置
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router#show ip interface  brief //显示路由接口配置
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router#show ip route       //查看路由表
+</span></span></code></pre></div><h4 id="3工程三招">3、工程三招<a hidden class="anchor" aria-hidden="true" href="#3工程三招">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  router(config)#no ip domain -lookup   //禁用dns解析
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#ip domain -lookup    //开启dns解析
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config)#line console 0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-line)#logging synchronous //log当前显示信息同步
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-line)#no exec-timeout   //设置永不超时
+</span></span></code></pre></div><h4 id="4简单配置">4、简单配置<a hidden class="anchor" aria-hidden="true" href="#4简单配置">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>命令首字母+？  //查询命令
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  命令前面+no  //删除命令
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#enable password *** //设置进入特权模式的密码
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#enable secret *** //设置进入特权模式的密码（加密）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#hostname **     //重命名router(config)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#interface s0/0      //进入端口s0/0 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config)#intface loopback ？  //创建环回接口
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config-if)#ip address IP 子网掩码  //配置IP和子网掩码
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router(config-if)#no shutdown  //启动端口
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  router#exit   //退出到上一级
+</span></span></code></pre></div><h4 id="静态路由">静态路由<a hidden class="anchor" aria-hidden="true" href="#静态路由">#</a></h4>
+<p>1、静态路由配置命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>R1(config)#ip route 目的IP 子网掩码 下一跳地址
+</span></span></code></pre></div><p>2、静态默认路由：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  R1(config)#ip route 0.0.0.0 0.0.0.0 下一跳地址
+</span></span></code></pre></div><h4 id="rip">Rip<a hidden class="anchor" aria-hidden="true" href="#rip">#</a></h4>
+<p>1、广播：一对所有，组播：一对多，单播：一对一。</p>
+<p>2、Rip</p>
+<p>度量值：跳数（超过15跳不可达）。</p>
+<p>RIP v1有类路由，RIP v2无类路由，（有类路由：不传子网掩码，无类路由：传递子网掩码）。</p>
+<p>使用UDP传输</p>
+<p>源目的端口号为520</p>
+<p>RIP协议号为17</p>
+<p>消息形式：请求消息，响应消息。</p>
+<p>默认支持等价负载均衡：4，最大6.</p>
+<p>管理距离120</p>
+<p>3、Rip计时器</p>
+<p>更新计时器（update）：30s更新路由表。</p>
+<p>无效计时器（invalid）:180s不刷新则将该路由条目的度量值设置为16。</p>
+<p>刷新计时器（flush）：默认240s，比无效计时器长60s。刷新后路由条目则删除。</p>
+<p>抑制计时器（hold-down）：180s。</p>
+<p>4、Rip防环机制：</p>
+<p>水平分割，路由毒化，触发更新。</p>
+<p>5、配置命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  Router(config)#router rip        //启动Rip进程
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-router)#version 2     //定义为版本2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-router)#no auto-summary  //关闭自动汇总
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Router(config-router)#network network-number   //哪些网络参与路由
+</span></span></code></pre></div><h4 id="ospf">OSPF<a hidden class="anchor" aria-hidden="true" href="#ospf">#</a></h4>
+<p>1、OSPF V2</p>
+<p>链路状态协议、</p>
+<p>度量值cost=10^8/接口带宽</p>
+<p>使用hello包简历邻居，10s里哟个组播发送一次，组播地址224.0.0.5</p>
+<p>管理距离110</p>
+<p>无自动汇总</p>
+<p>协议号：89</p>
+<p>2、五个数据包</p>
+<p>Hello数据包，功能:用于邻居的发现、建立与保活（10s维持邻居，40s超时）</p>
+<p>DBD数据包，功能：描述数据库的目录信息</p>
+<p>LSR数据包，功能：请求在DBD交换过程中发现的本路由器中没有的或已过时的LSA包细节（请求）</p>
+<p>LSU数据包，功能：用于LSA的洪泛和响应LSR（更新）</p>
+<p>LSAck数据包，功能：对LSU的确认（更新后回复确认）</p>
+<p>3、配置命令</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  R3(config)#router ospf 1  //启动ospf进程，本地进程号为1 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  R1(config-router)#router-id * //配置routerid（可选）
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  R3(config-router)#network 23.1.1.2 0.0.0.255 area 0  //宣告网段；反掩码；宣告进的区域。
+</span></span></code></pre></div><p>4、查看ospf建立的邻居关系</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>R1#show ip ospf neighbor 
+</span></span></code></pre></div><h4 id="eigrp">Eigrp<a hidden class="anchor" aria-hidden="true" href="#eigrp">#</a></h4>
+<p>1、三张表</p>
+<p>IP路由表：从EIGRP拓扑表以及其他路由协议进程（如RIP、OSPF等）选出的所有最优路由的列表</p>
+<p>拓扑表：从每个EIGRP邻居学习的所有路由的列表</p>
+<p>邻居表：与本路由器建立EIGRP邻居关系的直连路由器的列表</p>
+<p>2、管理距离</p>
+<p>内部：90</p>
+<p>外部：170</p>
+<p>汇总：5</p>
+<p>3、Eigrp</p>
+<p>组播地址：224.0.0.10</p>
+<p>协议号：88</p>
+<p>高级距离矢量协议</p>
+<p>4、配置</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>  Router(config)#router eigrp 200
+</span></span><span style="display:flex;"><span>  Router(config-router)#network
+</span></span><span style="display:flex;"><span>  Router(config-router)#no auto-summaryxxxxxxxxxx Router(config)#router eigrp   Router(config-router)#networkRouter(config-router)#no auto-summary
+</span></span></code></pre></div>
+
+        </div>
+        
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="prev" href="https://msx.ink/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>正能量健身主题餐厅项目计划书</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+
+
+
+
+</article>
+</main>
+
+<footer class="footer">
+    <span>
+        &copy;
+        2019-2024
+        <a href="https://msx.ink/" style="color:#939393;">Moshuxv&#39;s Blog</a>
+        &
+    </span>
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;">桂ICP备2023001992号</a>&nbsp;
+    
+</br>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Moshuxv's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                let textData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Moshuxv's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '复制';
+
+        function copyingDone() {
+            copybutton.innerText = '已复制！';
+            setTimeout(() => {
+                copybutton.innerText = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Moshuxv's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        macTool.setAttribute('class', 'mac-tool')
+        macTool1.setAttribute('class', 'mac bb1')
+        macTool2.setAttribute('class', 'mac bb2')
+        macTool3.setAttribute('class', 'mac bb3')
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+</body>
+
+</html>

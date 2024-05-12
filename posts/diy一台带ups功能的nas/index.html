@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Diy一台带Ups功能的Nas | Moshuxv&#39;s Blog</title>
+<meta name="keywords" content="Redis">
+<meta name="description" content="前言 ​ 由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。 一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​ ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必">
+<meta name="author" content="moshuxv">
+<link rel="canonical" href="https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.css" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.js" onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://msx.ink/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://msx.ink/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://msx.ink/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://msx.ink/apple-touch-icon.png">
+<link rel="mask-icon" href="https://msx.ink/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="Diy一台带Ups功能的Nas" />
+<meta property="og:description" content="前言 ​ 由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。 一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​ ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/" />
+<meta property="og:image" content="http://img.msx.ink/mmexport1703417789896.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-18T15:55:23+08:00" />
+<meta property="article:modified_time" content="2023-04-18T15:55:23+08:00" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://img.msx.ink/mmexport1703417789896.jpg" />
+<meta name="twitter:title" content="Diy一台带Ups功能的Nas"/>
+<meta name="twitter:description" content="前言 ​ 由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。 一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​ ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  1 ,
+          "name": "Posts",
+          "item": "https://msx.ink/posts/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Diy一台带Ups功能的Nas",
+      "item": "https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Diy一台带Ups功能的Nas",
+  "name": "Diy一台带Ups功能的Nas",
+  "description": "前言 ​ 由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。 一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​ ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必",
+  "keywords": [
+    "Redis"
+  ],
+  "articleBody": "前言 ​\t由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。\n一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​\tups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必不可少的，目前市面上的ups基本上都是交流电UPS，缺点有很多，体积大、空载的功耗高转化率低,市面上又基本上找不到适合nas用的大功率直流UPS，所以我打算自己DIY。\n电量统计功能 ​\tnas是365天不间断运行的，对于它的耗电量，我心里也是充满了好奇。所以我觉得有必要加上电量统计功能，方便知道用了多少电。\n二、方案制定 基本功能 nas的主要硬件方面我选择了映泰j4125+8G内存的组合，加一根16G的傲腾ssd做缓存，J4125在黑群晖920+下可以免打驱动使用核显，功耗TPD10W。\n因为Nas还要实现ups功能，所以机箱除了要塞下基本硬件外，还要塞下ups的电池组，所以机箱的内部空间必须得大，在我的精挑细选下，最终选择了这款机箱：\n因为这款机箱的配色我不太喜欢，所以我对机箱重新进行了喷漆\n喷完漆后的效果:\nups功能 ups模块 ​\t市面上基本上找不到大功率直流ups模块,逛淘宝的时候只找到了一款给路由器用的Ups模块，最大功率支持12V 4A\n但是12X4＝48w 功率还是不够高怎么办？ 那就把两块ups模块并联起来呗，并联之后功率叠加 12*8=96w\n电池组 ​\t电池在这里的作用是储存电能，当停电的时候由电池给nas供电，在这里我用了3颗21700电池进行串联，单颗电池容量18.5wh 18.5*3=55.5，也就是说能够支持55.5w的电器使用一个小时，由于没有点焊机，所以我自己用亚克力板做了一个电池盒，将电池串联起来。\n电源 想要低功那就只能选择DC-ATX方案，市面上的dc电源质量参差不齐，在多多比较后我选择了微软xbox电源。\n电量统计 ​\t由于技术不够，不会设计电路，在电量统计功能方面，我用智能插座来统计电量，选用了小米智能插座3。\n三、组装环节 把智能插座和电源的外壳拆除后，把所有的元器件焊接在一起。\n方框里的元器件分别是： ①拆除了外壳的小米智能插座3 ②风扇调速模块；电源在运行的时候温度是很烫的，所以我加装了一个风扇给电源降温，模块带温控功能，能根据机箱环境温度进行调节转速速或者停止工作。 ③拆除了外壳的xbox电源。 ④两块并联的UPS模块。 ⑤电池组\n接线图：\n最终效果：\n支持电量信息统计：\n停电后自动关机功能 ​\tups理论上能支持nas使用一个小时左右，但是万一停电时间比较长，ups的电量也会有耗尽的时候，怎么才能让nas在停电的时候自动关机呢？\n​\t我的思路是写一个脚本，每隔2分钟ping一下路由器，如果停电了路由器是不会回应的，如果路由器没有回应，就执行关机命令，具体做法如下：\n首先ssh 连接nas，在/mnt目录下创建一个名为autoshutdown.sh的文件，并设置文件的权限为755: mkdir autoshutdown.sh /mnt chmod -r 755 /mnt/autoshutdown.sh 2.用vi编辑器编辑autoshutdown.sh，在文件里输入下面的脚本：\n#!/bin/sh MonitorIP=192.168.1.1 DelayTime=120s ping -c 1 $MonitorIP \u003e /dev/null ret=$? if [ $ret -eq 0 ] then echo ‘ AC Power OK ! ‘ else synologset1 sys warn 0x11600036 echo ‘ AC Power maybe off, checking again after 1 minutes ! ‘ sleep $DelayTime ping -c 1 $MonitorIP \u003e /dev/null ret=$? if [ $ret -eq 0 ] then synologset1 sys warn 0x11600037 echo ‘ Checkagain, AC Power OK ! ‘ else synologset1 sys warn 0x11600035 poweroff fi fi 3.设置定时运行，用vi修改/etc/目录下的系统定时文件crontab，添加如下内容后重启nas\nroot /mnt/autoshutdown.sh ",
+  "wordCount" : "1399",
+  "inLanguage": "zh",
+  "image":"http://img.msx.ink/mmexport1703417789896.jpg","datePublished": "2023-04-18T15:55:23+08:00",
+  "dateModified": "2023-04-18T15:55:23+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "moshuxv"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Moshuxv's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://msx.ink/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    (function () {
+        let  arr,reg = new RegExp("(^| )"+"change-themes"+"=([^;]*)(;|$)");
+        if(arr = document.cookie.match(reg)) {
+        } else {
+            if (new Date().getHours() >= 19 || new Date().getHours() < 6) {
+                document.body.classList.add('dark');
+                localStorage.setItem("pref-theme", 'dark');
+            } else {
+                document.body.classList.remove('dark');
+                localStorage.setItem("pref-theme", 'light');
+            }
+        }
+    })()
+
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://msx.ink/" accesskey="h" title="Moshuxv&#39;s Blog (Alt + H)">Moshuxv&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://msx.ink/" title="主页">
+                <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://msx.ink/archives/" title="时间轴">
+                <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://msx.ink/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://msx.ink/about" title="关于">
+                <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://msx.ink/"> 主页</a>&nbsp;»&nbsp;<a href="https://msx.ink/posts/">Posts</a></div>
+            <h1 class="post-title">
+                Diy一台带Ups功能的Nas
+            </h1>
+            <div class="post-meta">
+
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>2023-04-18
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>1399字
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>3分钟
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>moshuxv
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                <a href="https://msx.ink/tags/redis/" style="color: var(--secondary)!important;">Redis</a>
+                &nbsp;<a href="https://msx.ink/tags/tech/" style="color: var(--secondary)!important;">Tech</a>
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo/1.5.8/twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "https://msx.ink/"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> 
+<figure class="entry-cover1"><img style="zoom:;" loading="lazy" src="http://img.msx.ink/mmexport1703417789896.jpg" alt="">
+    
+</figure><aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e5%89%8d%e8%a8%80" aria-label="前言">前言</a></li>
+                <li>
+                    <a href="#%e4%b8%80%e7%a1%ae%e5%ae%9a%e9%9c%80%e6%b1%82" aria-label="一、确定需求">一、确定需求</a><ul>
+                        <ul>
+                        <ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e9%9c%80%e6%b1%82" aria-label="基本需求">基本需求</a></li>
+                <li>
+                    <a href="#ups%e5%8a%9f%e8%83%bd" aria-label="Ups功能">Ups功能</a></li>
+                <li>
+                    <a href="#%e7%94%b5%e9%87%8f%e7%bb%9f%e8%ae%a1%e5%8a%9f%e8%83%bd" aria-label="电量统计功能">电量统计功能</a></li></ul>
+                    </ul>
+                    </ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e4%ba%8c%e6%96%b9%e6%a1%88%e5%88%b6%e5%ae%9a" aria-label="二、方案制定">二、方案制定</a><ul>
+                        <ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e5%8a%9f%e8%83%bd" aria-label="基本功能">基本功能</a></li>
+                <li>
+                    <a href="#ups%e5%8a%9f%e8%83%bd-1" aria-label="ups功能">ups功能</a><ul>
+                        
+                <li>
+                    <a href="#ups%e6%a8%a1%e5%9d%97" aria-label="ups模块">ups模块</a></li>
+                <li>
+                    <a href="#%e7%94%b5%e6%b1%a0%e7%bb%84" aria-label="电池组">电池组</a></li>
+                <li>
+                    <a href="#%e7%94%b5%e6%ba%90" aria-label="电源">电源</a></li>
+                <li>
+                    <a href="#%e7%94%b5%e9%87%8f%e7%bb%9f%e8%ae%a1" aria-label="电量统计">电量统计</a></li></ul>
+                </li></ul>
+                    </ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e4%b8%89%e7%bb%84%e8%a3%85%e7%8e%af%e8%8a%82" aria-label="三、组装环节">三、组装环节</a><ul>
+                        <ul>
+                        <ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e5%81%9c%e7%94%b5%e5%90%8e%e8%87%aa%e5%8a%a8%e5%85%b3%e6%9c%ba%e5%8a%9f%e8%83%bd" aria-label="停电后自动关机功能">停电后自动关机功能</a>
+                </li>
+            </ul>
+            </ul>
+            </ul>
+            </ul>
+            </li>
+            </ul>
+        </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+        
+        activeElement = elements[0];
+        const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+        document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+    }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        if (elements) {
+            activeElement = Array.from(elements).find((element) => {
+                if ((getOffsetTop(element) - window.pageYOffset) > 0 &&
+                    (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                    return element;
+                }
+            }) || activeElement
+
+            elements.forEach(element => {
+                const id = encodeURI(element.getAttribute('id')).toLowerCase();
+                if (element === activeElement){
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+                } else {
+                    document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+                }
+            })
+        }
+    }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;
+    }
+</script>
+        <div class="post-content"><h2 id="前言">前言<a hidden class="anchor" aria-hidden="true" href="#前言">#</a></h2>
+<p>​	由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703416360445.jpg" alt=""  />
+</p>
+<h2 id="一确定需求">一、确定需求<a hidden class="anchor" aria-hidden="true" href="#一确定需求">#</a></h2>
+<h6 id="基本需求">基本需求<a hidden class="anchor" aria-hidden="true" href="#基本需求">#</a></h6>
+<ul>
+<li>能运行虚拟机</li>
+<li>具有一定的硬件解码能力</li>
+<li>低功耗。</li>
+</ul>
+<h6 id="ups功能">Ups功能<a hidden class="anchor" aria-hidden="true" href="#ups功能">#</a></h6>
+<p>​	ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必不可少的，目前市面上的ups基本上都是交流电UPS，缺点有很多，体积大、空载的功耗高转化率低,市面上又基本上找不到适合nas用的大功率直流UPS，所以我打算自己DIY。</p>
+<h6 id="电量统计功能">电量统计功能<a hidden class="anchor" aria-hidden="true" href="#电量统计功能">#</a></h6>
+<p>​	nas是365天不间断运行的，对于它的耗电量，我心里也是充满了好奇。所以我觉得有必要加上电量统计功能，方便知道用了多少电。</p>
+<h2 id="二方案制定">二、方案制定<a hidden class="anchor" aria-hidden="true" href="#二方案制定">#</a></h2>
+<h5 id="基本功能">基本功能<a hidden class="anchor" aria-hidden="true" href="#基本功能">#</a></h5>
+<ul>
+<li>
+<p>nas的主要硬件方面我选择了映泰j4125+8G内存的组合，加一根16G的傲腾ssd做缓存，J4125在黑群晖920+下可以免打驱动使用核显，功耗TPD10W。</p>
+</li>
+<li>
+<p>因为Nas还要实现ups功能，所以机箱除了要塞下基本硬件外，还要塞下ups的电池组，所以机箱的内部空间必须得大，在我的精挑细选下，最终选择了这款机箱：</p>
+</li>
+</ul>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703417129065.jpg" alt=""  />
+</p>
+<p>因为这款机箱的配色我不太喜欢，所以我对机箱重新进行了喷漆</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703417275972.jpg" alt=""  />
+</p>
+<p>喷完漆后的效果:</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703417401347.jpg" alt=""  />
+</p>
+<h5 id="ups功能-1">ups功能<a hidden class="anchor" aria-hidden="true" href="#ups功能-1">#</a></h5>
+<h6 id="ups模块">ups模块<a hidden class="anchor" aria-hidden="true" href="#ups模块">#</a></h6>
+<p>​	市面上基本上找不到大功率直流ups模块,逛淘宝的时候只找到了一款给路由器用的Ups模块，最大功率支持12V 4A</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703417513487.png" alt=""  />
+</p>
+<p>但是12X4＝48w 功率还是不够高怎么办？
+那就把两块ups模块并联起来呗，并联之后功率叠加 12*8=96w</p>
+<h6 id="电池组">电池组<a hidden class="anchor" aria-hidden="true" href="#电池组">#</a></h6>
+<p>​	 电池在这里的作用是储存电能，当停电的时候由电池给nas供电，在这里我用了3颗21700电池进行串联，单颗电池容量18.5wh 18.5*3=55.5，也就是说能够支持55.5w的电器使用一个小时，由于没有点焊机，所以我自己用亚克力板做了一个电池盒，将电池串联起来。</p>
+<img src="http://img.msx.ink/mmexport1703417774783.jpg" style="zoom:150%;" />
+<img src="http://img.msx.ink/mmexport1703417789896.jpg" style="zoom:33%;" />
+<h6 id="电源">电源<a hidden class="anchor" aria-hidden="true" href="#电源">#</a></h6>
+<p>想要低功那就只能选择DC-ATX方案，市面上的dc电源质量参差不齐，在多多比较后我选择了微软xbox电源。</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703418073406.jpg" alt=""  />
+</p>
+<h6 id="电量统计">电量统计<a hidden class="anchor" aria-hidden="true" href="#电量统计">#</a></h6>
+<p>​	由于技术不够，不会设计电路，在电量统计功能方面，我用智能插座来统计电量，选用了小米智能插座3。</p>
+<h2 id="三组装环节">三、组装环节<a hidden class="anchor" aria-hidden="true" href="#三组装环节">#</a></h2>
+<p>把智能插座和电源的外壳拆除后，把所有的元器件焊接在一起。</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703418529291.jpg" alt=""  />
+</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703418535703.jpg" alt=""  />
+</p>
+<p>方框里的元器件分别是：
+①拆除了外壳的小米智能插座3
+②风扇调速模块；电源在运行的时候温度是很烫的，所以我加装了一个风扇给电源降温，模块带温控功能，能根据机箱环境温度进行调节转速速或者停止工作。
+③拆除了外壳的xbox电源。
+④两块并联的UPS模块。
+⑤电池组</p>
+<p>接线图：</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703419110533.png" alt=""  />
+</p>
+<p>最终效果：</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703417401347.jpg" alt=""  />
+</p>
+<p>支持电量信息统计：</p>
+<p><img loading="lazy" src="http://img.msx.ink/mmexport1703419206636.jpg" alt=""  />
+</p>
+<h6 id="停电后自动关机功能">停电后自动关机功能<a hidden class="anchor" aria-hidden="true" href="#停电后自动关机功能">#</a></h6>
+<p>​	ups理论上能支持nas使用一个小时左右，但是万一停电时间比较长，ups的电量也会有耗尽的时候，怎么才能让nas在停电的时候自动关机呢？</p>
+<p>​	我的思路是写一个脚本，每隔2分钟ping一下路由器，如果停电了路由器是不会回应的，如果路由器没有回应，就执行关机命令，具体做法如下：</p>
+<ol>
+<li>首先ssh 连接nas，在/mnt目录下创建一个名为autoshutdown.sh的文件，并设置文件的权限为755:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>mkdir autoshutdown.sh /mnt
+</span></span><span style="display:flex;"><span>chmod -r 755 /mnt/autoshutdown.sh
+</span></span></code></pre></div><p>2.用vi编辑器编辑autoshutdown.sh，在文件里输入下面的脚本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>MonitorIP<span style="color:#f92672">=</span>192.168.1.1
+</span></span><span style="display:flex;"><span>DelayTime<span style="color:#f92672">=</span>120s
+</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">1</span> $MonitorIP &gt; /dev/null
+</span></span><span style="display:flex;"><span>ret<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $ret -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>echo ‘ AC Power OK ! ‘
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>synologset1 sys warn 0x11600036
+</span></span><span style="display:flex;"><span>echo ‘ AC Power maybe off, checking again after <span style="color:#ae81ff">1</span> minutes ! ‘
+</span></span><span style="display:flex;"><span>sleep $DelayTime
+</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">1</span> $MonitorIP &gt; /dev/null
+</span></span><span style="display:flex;"><span>ret<span style="color:#f92672">=</span>$?
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> $ret -eq <span style="color:#ae81ff">0</span> <span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>synologset1 sys warn 0x11600037
+</span></span><span style="display:flex;"><span>echo ‘ Checkagain, AC Power OK ! ‘
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>synologset1 sys warn 0x11600035
+</span></span><span style="display:flex;"><span>poweroff
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>3.设置定时运行，用vi修改/etc/目录下的系统定时文件crontab，添加如下内容后重启nas</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>root        /mnt/autoshutdown.sh
+</span></span></code></pre></div>
+
+        </div>
+        
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="prev" href="https://msx.ink/posts/c%E8%AE%A1%E5%88%92/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>C计划</span>
+  </a>
+  <a class="next" href="https://msx.ink/posts/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>准备上交国家了</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+
+
+
+
+</article>
+</main>
+
+<footer class="footer">
+    <span>
+        &copy;
+        2019-2024
+        <a href="https://msx.ink/" style="color:#939393;">Moshuxv&#39;s Blog</a>
+        &
+    </span>
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;">桂ICP备2023001992号</a>&nbsp;
+    
+</br>
+    
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Moshuxv's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                let textData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Moshuxv's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '复制';
+
+        function copyingDone() {
+            copybutton.innerText = '已复制！';
+            setTimeout(() => {
+                copybutton.innerText = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Moshuxv's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        macTool.setAttribute('class', 'mac-tool')
+        macTool1.setAttribute('class', 'mac bb1')
+        macTool2.setAttribute('class', 'mac bb2')
+        macTool3.setAttribute('class', 'mac bb3')
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+</body>
+
+</html>
