@@ -2,62 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tech on Moshuxv&#39;s Blog</title>
-    <link>http://localhost:1313/tags/tech/</link>
+    <link>https://msx.ink/tags/tech/</link>
     <description>Recent content in Tech on Moshuxv&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 25 Apr 2024 15:55:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/tech/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>正能量健身主题餐厅项目计划书</title>
-      <link>http://localhost:1313/posts/%E5%85%BB%E4%BA%86%E4%B8%80%E4%BA%9B%E8%9C%9C%E8%9C%82/</link>
-      <pubDate>Thu, 25 Apr 2024 15:55:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/posts/%E5%85%BB%E4%BA%86%E4%B8%80%E4%BA%9B%E8%9C%9C%E8%9C%82/</guid>
-      <description>从网上买了一些蜜蜂 养在阳台上 蜂箱是自己手工打造的</description>
-    </item>
-    
+    <lastBuildDate>Sun, 10 Dec 2023 00:17:58 +0800</lastBuildDate><atom:link href="https://msx.ink/tags/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>帮朋友做的海报</title>
-      <link>http://localhost:1313/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</link>
+      <link>https://msx.ink/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</link>
       <pubDate>Sun, 10 Dec 2023 00:17:58 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</guid>
+      <guid>https://msx.ink/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C计划</title>
-      <link>http://localhost:1313/posts/c%E8%AE%A1%E5%88%92/</link>
+      <link>https://msx.ink/posts/c%E8%AE%A1%E5%88%92/</link>
       <pubDate>Sun, 07 May 2023 15:55:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/c%E8%AE%A1%E5%88%92/</guid>
+      <guid>https://msx.ink/posts/c%E8%AE%A1%E5%88%92/</guid>
       <description>前言： 现在Type-C接口已经成为了充电接口的主流，它有很多优点，比如支持正反插、充电快、插拔次数多等。但是我家里很多设备都不是Type-C接口的，比如键盘、剃须刀、体脂秤等，趁着有空，我打算把家里所有的非Type-C接口设备全都改成Type-c的。 前期准备： 1.想要正确的焊接，</description>
     </item>
     
     <item>
       <title>Diy一台带Ups功能的Nas</title>
-      <link>http://localhost:1313/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</link>
+      <link>https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</link>
       <pubDate>Tue, 18 Apr 2023 15:55:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</guid>
+      <guid>https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</guid>
       <description>前言 ​ 由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。 一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​ ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必</description>
     </item>
     
     <item>
       <title>正能量健身主题餐厅项目计划书</title>
-      <link>http://localhost:1313/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</link>
+      <link>https://msx.ink/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</link>
       <pubDate>Sun, 29 Mar 2020 15:55:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</guid>
+      <guid>https://msx.ink/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</guid>
       <description>一、项目简介 1、项目名称:正能量健身主题餐厅 2、项目LOGO： 3、项目背景 本人健身爱好者，学生，经常会产生一种今天吃什么的想法,学校的食堂无法满足我的营养需求,因为学习问题无法合理安排自己的饮食,所以就想如果有一个能为健身人群量身定制的餐厅,以及一个交流健身经验的场所就好了 4、目</description>
     </item>
     
     <item>
       <title>Cisco路由学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Mon, 27 Jan 2020 00:17:58 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://msx.ink/posts/%E6%80%9D%E7%A7%91%E8%B7%AF%E7%94%B1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>OSI/TCP分层 1、OSI 1层：物理层：双绞线、集线器、转换器、中继器、 2层：链路层：网卡(mac地址)、交换机、网桥、 3层：网络层：路由器、IP地址、 4层：传输层：tcp&amp;amp;udp、专门为应用层服务。 5层：会话层 6层：表示层 7层：应用层：为软件提供的接口（端口）http</description>
     </item>
     

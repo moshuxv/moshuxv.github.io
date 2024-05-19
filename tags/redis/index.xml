@@ -2,35 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Redis on Moshuxv&#39;s Blog</title>
-    <link>http://localhost:1313/tags/redis/</link>
+    <link>https://msx.ink/tags/redis/</link>
     <description>Recent content in Redis on Moshuxv&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Thu, 25 Apr 2024 15:55:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/redis/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>正能量健身主题餐厅项目计划书</title>
-      <link>http://localhost:1313/posts/%E5%85%BB%E4%BA%86%E4%B8%80%E4%BA%9B%E8%9C%9C%E8%9C%82/</link>
-      <pubDate>Thu, 25 Apr 2024 15:55:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/posts/%E5%85%BB%E4%BA%86%E4%B8%80%E4%BA%9B%E8%9C%9C%E8%9C%82/</guid>
-      <description>从网上买了一些蜜蜂 养在阳台上 蜂箱是自己手工打造的</description>
-    </item>
-    
+    <lastBuildDate>Tue, 18 Apr 2023 15:55:23 +0800</lastBuildDate><atom:link href="https://msx.ink/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Diy一台带Ups功能的Nas</title>
-      <link>http://localhost:1313/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</link>
+      <link>https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</link>
       <pubDate>Tue, 18 Apr 2023 15:55:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</guid>
+      <guid>https://msx.ink/posts/diy%E4%B8%80%E5%8F%B0%E5%B8%A6ups%E5%8A%9F%E8%83%BD%E7%9A%84nas/</guid>
       <description>前言 ​ 由于存放在网盘的文件经常被和谐，所以产生了组一台NAS的想法，方便存储文件，当个人网站服务器用。 一、确定需求 基本需求 能运行虚拟机 具有一定的硬件解码能力 低功耗。 Ups功能 ​ ups的的主要作用是防止突然间停电影响nas的工作导致硬盘损坏，为了nas的数据安全，一台ups肯定是必</description>
     </item>
     
     <item>
       <title>正能量健身主题餐厅项目计划书</title>
-      <link>http://localhost:1313/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</link>
+      <link>https://msx.ink/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</link>
       <pubDate>Sun, 29 Mar 2020 15:55:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</guid>
+      <guid>https://msx.ink/posts/%E6%AD%A3%E8%83%BD%E9%87%8F%E5%81%A5%E8%BA%AB%E4%B8%BB%E9%A2%98%E9%A4%90%E5%8E%85%E9%A1%B9%E7%9B%AE%E8%AE%A1%E5%88%92%E4%B9%A6/</guid>
       <description>一、项目简介 1、项目名称:正能量健身主题餐厅 2、项目LOGO： 3、项目背景 本人健身爱好者，学生，经常会产生一种今天吃什么的想法,学校的食堂无法满足我的营养需求,因为学习问题无法合理安排自己的饮食,所以就想如果有一个能为健身人群量身定制的餐厅,以及一个交流健身经验的场所就好了 4、目</description>
     </item>
     
