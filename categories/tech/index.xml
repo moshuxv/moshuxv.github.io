@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tech on Moshuxv&#39;s Blog</title>
-    <link>https://msx.ink/categories/tech/</link>
+    <link>http://localhost:1313/categories/tech/</link>
     <description>Recent content in Tech on Moshuxv&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 10 Dec 2023 00:17:58 +0800</lastBuildDate><atom:link href="https://msx.ink/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Dec 2023 00:17:58 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>帮朋友做的海报</title>
-      <link>https://msx.ink/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</link>
+      <link>http://localhost:1313/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</link>
       <pubDate>Sun, 10 Dec 2023 00:17:58 +0800</pubDate>
       
-      <guid>https://msx.ink/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</guid>
+      <guid>http://localhost:1313/posts/%E5%B8%AE%E6%9C%8B%E5%8F%8B%E5%81%9A%E7%9A%84%E6%B5%B7%E6%8A%A5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C计划</title>
-      <link>https://msx.ink/posts/c%E8%AE%A1%E5%88%92/</link>
+      <link>http://localhost:1313/posts/c%E8%AE%A1%E5%88%92/</link>
       <pubDate>Sun, 07 May 2023 15:55:23 +0800</pubDate>
       
-      <guid>https://msx.ink/posts/c%E8%AE%A1%E5%88%92/</guid>
+      <guid>http://localhost:1313/posts/c%E8%AE%A1%E5%88%92/</guid>
       <description>前言： 现在Type-C接口已经成为了充电接口的主流，它有很多优点，比如支持正反插、充电快、插拔次数多等。但是我家里很多设备都不是Type-C接口的，比如键盘、剃须刀、体脂秤等，趁着有空，我打算把家里所有的非Type-C接口设备全都改成Type-c的。 前期准备： 1.想要正确的焊接，</description>
     </item>
     

@@ -2,26 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Life on Moshuxv&#39;s Blog</title>
-    <link>https://msx.ink/tags/life/</link>
+    <link>http://localhost:1313/tags/life/</link>
     <description>Recent content in Life on Moshuxv&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 31 Dec 2023 02:30:23 +0800</lastBuildDate><atom:link href="https://msx.ink/tags/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 03 Mar 2024 15:55:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/life/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>忽然间好想回去</title>
-      <link>https://msx.ink/posts/%E5%BF%BD%E7%84%B6%E9%97%B4%E5%A5%BD%E6%83%B3%E5%9B%9E%E5%8E%BB/</link>
+      <title>使用CDN加速网站</title>
+      <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8cdn%E6%8A%80%E6%9C%AF%E5%8A%A0%E9%80%9F%E7%BD%91%E7%AB%99-003250/</link>
+      <pubDate>Sun, 03 Mar 2024 15:55:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8cdn%E6%8A%80%E6%9C%AF%E5%8A%A0%E9%80%9F%E7%BD%91%E7%AB%99-003250/</guid>
+      <description>...</description>
+    </item>
+    
+    <item>
+      <title>我的青春</title>
+      <link>http://localhost:1313/posts/%E5%BF%BD%E7%84%B6%E9%97%B4%E5%A5%BD%E6%83%B3%E5%9B%9E%E5%8E%BB/</link>
       <pubDate>Sun, 31 Dec 2023 02:30:23 +0800</pubDate>
       
-      <guid>https://msx.ink/posts/%E5%BF%BD%E7%84%B6%E9%97%B4%E5%A5%BD%E6%83%B3%E5%9B%9E%E5%8E%BB/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/%E5%BF%BD%E7%84%B6%E9%97%B4%E5%A5%BD%E6%83%B3%E5%9B%9E%E5%8E%BB/</guid>
+      <description>忽然间好想回去</description>
     </item>
     
     <item>
       <title>准备上交国家了</title>
-      <link>https://msx.ink/posts/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/</link>
+      <link>http://localhost:1313/posts/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/</link>
       <pubDate>Sat, 06 Mar 2021 15:55:23 +0800</pubDate>
       
-      <guid>https://msx.ink/posts/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/</guid>
+      <guid>http://localhost:1313/posts/%E5%87%86%E5%A4%87%E4%B8%8A%E4%BA%A4%E5%9B%BD%E5%AE%B6%E4%BA%86/</guid>
       <description>...</description>
     </item>
     
