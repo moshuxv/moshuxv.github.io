@@ -145,7 +145,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
               }
               // 添加闪烁光标
               addBlinkingCursor(LINES[LINES.length - 1].id);
-          } catch (e: Error) {
+          } catch (e) { // 修改：移除类型注解
               showError(e);
           }
       }
@@ -156,7 +156,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
               await typeText(el, line.text);
               if (line.id === 'line2') {
                   const cursor = addBlinkingCursor(line.id);
-                  await wait(2000, cursor); // 停顿 2 秒
+                  await wait(2000, cursor as { cursor: HTMLElement; blinkInterval: number }); // 修改：类型断言
               }
           }
       }
@@ -166,7 +166,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           for (const line of ADDITIONAL_LINES) {
               await typeText(line3El, line.text);
               const cursor = addBlinkingCursor('line3');
-              await wait(line.pause, cursor);
+              await wait(line.pause, cursor as { cursor: HTMLElement; blinkInterval: number }); // 修改：类型断言
               await backspaceText(line3El, line.text.length);
           }
       }
@@ -247,7 +247,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
       function wait(time: number, cursorObj: { cursor: HTMLElement; blinkInterval: number }) {
           return new Promise<void>((resolve) => {
               setTimeout(() => {
-                  clearInterval(cursorObj.blinkInterval);
+                  clearInterval(cursorObj.blinkInterval as unknown as number); // 修改：类型断言
                   cursorObj.cursor.remove();
                   resolve();
               }, time);
