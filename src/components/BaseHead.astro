@@ -130,12 +130,12 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 
           // 然后加载后续内容
           try {
-              const data = await fetch('src/assets/1.json').then(res => res.json());
+              const data = await fetch('src/assets/1.json').then((res) => res.json());
               const item = data[Math.floor(Math.random() * data.length)];
               // 逐行输入内容
               for (let i = 0; i < LINES.length; i++) {
                   const line = LINES[i];
-                  const el = document.getElementById(line.id);
+                  const el = document.getElementById(line.id)!;
                   const text = line.prefix ? line.prefix + item[line.key] : item[line.key];
                   await typeText(el, text);
                   // 如果是 line2 显示完，处理 line3 的额外内容
@@ -145,14 +145,14 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
               }
               // 添加闪烁光标
               addBlinkingCursor(LINES[LINES.length - 1].id);
-          } catch (e) {
+          } catch (e: Error) {
               showError(e);
           }
       }
 
       async function showInitialLines() {
           for (const line of INITIAL_LINES) {
-              const el = document.getElementById(line.id);
+              const el = document.getElementById(line.id)!;
               await typeText(el, line.text);
               if (line.id === 'line2') {
                   const cursor = addBlinkingCursor(line.id);
@@ -162,7 +162,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
       }
 
       async function handleAdditionalLinesInLine3() {
-          const line3El = document.getElementById('line3');
+          const line3El = document.getElementById('line3')!;
           for (const line of ADDITIONAL_LINES) {
               await typeText(line3El, line.text);
               const cursor = addBlinkingCursor('line3');
@@ -173,20 +173,20 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 
       async function backspaceLines() {
           for (const line of INITIAL_LINES.reverse()) {
-              const el = document.getElementById(line.id);
+              const el = document.getElementById(line.id)!;
               await backspaceText(el, line.text.length);
           }
       }
 
-      async function typeLines(item) {
+      async function typeLines(item: any) {
           // 清空所有行内容
-          LINES.forEach(line => {
-              document.getElementById(line.id).innerHTML = '';
+          LINES.forEach((line) => {
+              document.getElementById(line.id)!.innerHTML = '';
           });
 
           // 逐行输入内容
           for (const line of LINES) {
-              const el = document.getElementById(line.id);
+              const el = document.getElementById(line.id)!;
               const text = line.prefix ? line.prefix + item[line.key] : item[line.key];
               await typeText(el, text);
           }
@@ -195,8 +195,8 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           addBlinkingCursor(LINES[LINES.length - 1].id);
       }
 
-      function typeText(el, text) {
-          return new Promise(resolve => {
+      function typeText(el: HTMLElement, text: string) {
+          return new Promise<void>((resolve) => {
               let count = 0;
               const timer = setInterval(() => {
                   // 带光标的临时内容
@@ -211,11 +211,11 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           });
       }
 
-      function backspaceText(el, length) {
-          return new Promise(resolve => {
+      function backspaceText(el: HTMLElement, length: number) {
+          return new Promise<void>((resolve) => {
               let count = length;
               const timer = setInterval(() => {
-                  const text = el.textContent.slice(0, count - 1);
+                  const text = el.textContent!.slice(0, count - 1);
                   el.innerHTML = text + '<span class="typing-cursor">|</span>';
                   count--;
                   if (count < 0) {
@@ -227,8 +227,8 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           });
       }
 
-      function addBlinkingCursor(lineId) {
-          const lastLine = document.getElementById(lineId);
+      function addBlinkingCursor(lineId: string) {
+          const lastLine = document.getElementById(lineId)!;
           const cursor = document.createElement('span');
           cursor.classList.add('blinking-cursor');
           cursor.textContent = '|';
@@ -244,8 +244,8 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           return { cursor, blinkInterval };
       }
 
-      function wait(time, cursorObj) {
-          return new Promise(resolve => {
+      function wait(time: number, cursorObj: { cursor: HTMLElement; blinkInterval: number }) {
+          return new Promise<void>((resolve) => {
               setTimeout(() => {
                   clearInterval(cursorObj.blinkInterval);
                   cursorObj.cursor.remove();
@@ -254,9 +254,9 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           });
       }
 
-      function showError(e) {
+      function showError(e: Error) {
           console.error('Error:', e);
-          document.getElementById('line1').textContent = '数据加载失败';
+          document.getElementById('line1')!.textContent = '数据加载失败';
       }
 
       // 启动
@@ -274,7 +274,7 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
       opacity: 1;
       transition: opacity 0.5s ease;
   }
-</style>
+</style>    
 
 {
   /* User script*/
