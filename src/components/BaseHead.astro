@@ -120,6 +120,22 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
           { id: 'line3', key: 'author', prefix: '—— ' }
       ];
 
+      async function fetchWithTimeout(url, options = {}, timeout = 5000) {
+          const controller = new AbortController();
+          const id = setTimeout(() => controller.abort(), timeout);
+
+          try {
+              const response = await fetch(url, { ...options, signal: controller.signal });
+              clearTimeout(id);
+              return response;
+          } catch (error) {
+              if (error.name === 'AbortError') {
+                  throw new Error('请求超时');
+              }
+              throw error;
+          }
+      }
+
       // 核心逻辑
       async function init() {
           // 先显示初始内容
@@ -130,7 +146,8 @@ const socialImageURL = new URL(ogImage ? ogImage : '/images/social-card.png', As
 
           // 然后加载后续内容
           try {
-              const data = await fetch('src/assets/1.json').then((res) => res.json());
+              const response = await fetchWithTimeout('src/assets/1.json');
+              const data = await response.json();
               const item = data[Math.floor(Math.random() * data.length)];
               // 逐行输入内容
               for (let i = 0; i < LINES.length; i++) {
