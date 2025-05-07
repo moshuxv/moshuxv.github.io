@@ -3,8 +3,7 @@
     "env": {
       "NODE_VERSION": "20.x",
       "ENABLE_FILE_SYSTEM_API": "1"
-    },
-    "distDir": "dist"
+    }
   },
   "routes": [
     {
