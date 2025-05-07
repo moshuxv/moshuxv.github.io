@@ -4,7 +4,7 @@
   "version": "4.0.2-beta",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build", // 简化构建命令，移除可能冲突的自定义检查
+    "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
     "format": "prettier --write  '**/*.{js,jsx,ts,tsx,md,mdx,astro}'",
@@ -12,16 +12,16 @@
     "clean": "rm -rf .astro .vercel dist"
   },
   "engines": {
-    "node": ">=18.17.1 <=22.15.0" // 明确指定兼容的 Node 版本范围
+    "node": ">=18.17.1 <=22.15.0"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.11",
     "@astrojs/vercel": "^8.0.3",
-    "astro": "^5.5.8", // 升级到最新的 5.x 稳定版
-    "@astrojs/compiler": "^5.0.5", // 显式添加编译器依赖
-    "sharp": "^0.33.5", // Vercel 必须的图片处理库
-    "unocss": "^0.58.3" // 升级到更稳定的 UnoCSS 版本
+    "astro": "^5.5.8",
+    "@astrojs/compiler": "^5.0.5",
+    "sharp": "^0.33.5",
+    "unocss": "^0.58.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
@@ -29,6 +29,6 @@
     "eslint-plugin-astro": "^1.3.1",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.4.5" // 使用与 Astro 5.x 兼容的 TS 版本
+    "typescript": "^5.4.5"
   }
 }
