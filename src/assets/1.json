@@ -1,0 +1,1280 @@
+[
+    {
+        "content": "This universe is not outside of you. Look inside yourself; everything that you want, you already are.",
+        "author": "Rumi",
+        "translation": "宇宙并不在你之外。看看自己的内心吧。你想要的一切，都已尽在你身。",
+        "id": 1
+    },
+    {
+        "content": "Courage is doing what you're afraid to do. There can be no courage unless you're scared.",
+        "author": "Eddie Rickenbacker",
+        "translation": "行畏惧之事可谓勇；无畏则无勇。",
+        "id": 2
+    },
+    {
+        "content": "Nothing great was ever achieved without enthusiasm.",
+        "author": "Ralph Waldo Emerson",
+        "translation": "世界上任何伟业的成就都离不开热情。",
+        "id": 3
+    },
+    {
+        "content": "Every sweet has its sour; every evil its good.",
+        "author": "Ralph Waldo Emerson",
+        "translation": "甘饴有其酸涩，恶人亦有善行。",
+        "id": 4
+    },
+    {
+        "content": "Faith doesn't mean you never doubt. It only means you never act upon your doubts.",
+        "author": "Orson Scott Card",
+        "translation": "拥有信念并不代表毫无疑虑，它只意味着你从不带着疑虑行事。",
+        "id": 5
+    },
+    {
+        "content": "True life is lived when tiny changes occur.",
+        "author": "Leo Tolstoy",
+        "translation": "生命中有了细小的变化，才算是真正地活着。",
+        "id": 6
+    },
+    {
+        "content": "Difficulties increase the nearer we get to the goal.",
+        "author": "Goethe",
+        "translation": "我们越接近目标，就会遇到越多困难。",
+        "id": 7
+    },
+    {
+        "content": "First find out what you are capable of, then decide who you are.",
+        "author": "Tara Westover",
+        "translation": "先找出你的能力所在，然后再决定你是谁。",
+        "id": 8
+    },
+    {
+        "content": "You must remember what you are and what you have chosen to become, and the significance of what you are doing.",
+        "author": "John Williams",
+        "translation": "你必须记着自己是什么人，你选择要成为什么人，记住你正在从事的东西的重要意义。",
+        "id": 9
+    },
+    {
+        "content": "Love is what you've been through with somebody.",
+        "author": "James Thurber",
+        "translation": "爱，就是你和某个人一起经历的一切。",
+        "id": 10
+    },
+    {
+        "content": "Whomever you become, whatever you make yourself into, that is who you always were.",
+        "author": "Tara Westover",
+        "translation": "无论你成为谁，无论你把自己变成了什么，那就是你本来的样子。",
+        "id": 11
+    },
+    {
+        "content": "The sun always has ways to reach us.",
+        "author": "Kazuo Ishiguro",
+        "translation": "太阳总有办法照到我们，不管我们在哪里。",
+        "id": 12
+    },
+    {
+        "content": "Dads are most ordinary men turned by love into heroes, adventurers, story-tellers, and singers of songs.",
+        "author": "Pam Brown",
+        "translation": "父亲们不过是群普通人，但爱让他们化身英雄、探险家、说书人和歌者。",
+        "id": 13
+    },
+    {
+        "content": "If one does not know to which port one is sailing, no wind is favorable.",
+        "author": "Lucius Annaeus Seneca",
+        "translation": "如果你不知道要驶向哪个港口，任何风向都毫无助益。",
+        "id": 14
+    },
+    {
+        "content": "Plans to protect air and water, wilderness and wildlife are in fact plans to protect man.",
+        "author": "Stewart Udall",
+        "translation": "那些保护空气、水和野生动物的计划，实际上是为了保护人类自己。",
+        "id": 15
+    },
+    {
+        "content": "All of us, at certain moments of our lives, need to take advice and to receive help from other people.",
+        "author": "Alexis Carrel",
+        "translation": "在生命的某些时刻，我们每个人都需要听取他人的意见，接受他人的帮助。",
+        "id": 16
+    },
+    {
+        "content": "I'm not telling you it is going to be easy, I'm telling you it's going to be worth it.",
+        "author": "Art Williams",
+        "translation": "我不会告诉你这个过程很容易。我只会说，这一切都是值得的。",
+        "id": 17
+    },
+    {
+        "content": "Life is the flower for which love is the honey.",
+        "author": "Victor Hugo",
+        "translation": "生命如花，爱情是蜜。",
+        "id": 18
+    },
+    {
+        "content": "Not life, but good life, is to be chiefly valued.",
+        "author": "Socrates",
+        "translation": "最重要的不是生命，而是美好的生命。",
+        "id": 19
+    },
+    {
+        "content": "Success is not how high you have climbed, but how you make a positive difference to the world.",
+        "author": "Roy T. Bennett",
+        "translation": "成功不是你爬了多高，而是你如何为这个世界带来积极的影响。",
+        "id": 20
+    },
+    {
+        "content": "Don't cry when the sun is gone, because the tears won't let you see the stars.",
+        "author": "Violeta Parra",
+        "translation": "不要在太阳落下时哭泣，因为泪水会让你错过星星。",
+        "id": 21
+    },
+    {
+        "content": "Ill habits gather unseen degrees, as brooks make rivers, rivers run to seas.",
+        "author": "John Dryden",
+        "translation": "正如小溪汇聚成河流，河流汇入大海，坏习惯也会不知不觉积重难返。",
+        "id": 22
+    },
+    {
+        "content": "The farther behind I leave the past, the closer I am to forging my own character.",
+        "author": "Isabelle Eberhardt",
+        "translation": "我把过去抛得越远，便越接近于我自己锻造的自我。",
+        "id": 23
+    },
+    {
+        "content": "Only an open heart will allow you to float equally between everyone.",
+        "author": "Mitch Albom",
+        "translation": "唯有一颗坦诚的心才能使你平等地对待每个人。",
+        "id": 24
+    },
+    {
+        "content": "The most wasted day of all is that on which we have not laughed.",
+        "author": "Nicolas Chamfort",
+        "translation": "没有笑声的一天就是最虚度的一天。",
+        "id": 25
+    },
+    {
+        "content": "Love is when you are as concerned about someone else's situation as you are about your own.",
+        "author": "Mitch Albom",
+        "translation": "爱就是像关心自己一样去关心别人。",
+        "id": 26
+    },
+    {
+        "content": "Anything looked at closely becomes wonderful.",
+        "author": "A. R. Ammons",
+        "translation": "在近距离的观察下，任何事物都会显得美妙无比。",
+        "id": 27
+    },
+    {
+        "content": "The most important thing in life is to learn how to give out love, and to let it come in.",
+        "author": "Mitch Albom",
+        "translation": "生命中最重要的是学会给予爱，同时也要学会接纳爱。",
+        "id": 28
+    },
+    {
+        "content": "Health and cheerfulness naturally beget each other.",
+        "author": "Joseph Addison",
+        "translation": "安康喜乐，相生相成。",
+        "id": 29
+    },
+    {
+        "content": "Happiness is not a station you arrive at, but a manner of traveling.",
+        "author": "Margaret Lee Runbeck",
+        "translation": "幸福并不是你所抵达的站点，而是一种旅行的方式。",
+        "id": 30
+    },
+    {
+        "content": "A happy family is but an earlier heaven.",
+        "author": "George Bernard Shaw",
+        "translation": "幸福的家庭犹如人间天堂。",
+        "id": 31
+    },
+    {
+        "content": "All great achievements require time.",
+        "author": "Maya Angelou",
+        "translation": "所有伟大的成就都需要时间的历练。",
+        "id": 32
+    },
+    {
+        "content": "You do not write your life with words. You write it with actions.",
+        "author": "Patrick Ness",
+        "translation": "你不是用文字来书写你的人生的，而是用行动。",
+        "id": 33
+    },
+    {
+        "content": "Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope.",
+        "author": "Maya Angelou",
+        "translation": "爱情不识藩篱。它将跨栏杆、越栅栏、穿围墙，满怀憧憬地抵达终点。",
+        "id": 34
+    },
+    {
+        "content": "Nothing is so strong as gentleness, nothing so gentle as real strength.",
+        "author": "Saint Francis de Sales",
+        "translation": "没有什么比温柔更有力量，也没有什么比真正的力量更温柔。",
+        "id": 35
+    },
+    {
+        "content": "You make a life out of what you have, not what you're missing.",
+        "author": "Kate Morton",
+        "translation": "你是靠自己所拥有的，而不是所缺少的来过你的人生。",
+        "id": 36
+    },
+    {
+        "content": "Never regret. If it's good, it's wonderful. If it's bad, it's experience.",
+        "author": "Victoria Holt",
+        "translation": "永远别去后悔。若结果美好，那很精彩。若结果糟糕，那是经历。",
+        "id": 37
+    },
+    {
+        "content": "You miss 100% of the shots you don't take.",
+        "author": "Wayne Gretzky",
+        "translation": "你不去射门的话，就百分之百进不了球。",
+        "id": 38
+    },
+    {
+        "content": "Life's a mixed bag, no matter who you are.",
+        "author": "《时空恋旅人》",
+        "translation": "生活总是喜忧参半，无论你是谁。",
+        "id": 39
+    },
+    {
+        "content": "How lucky I am to have something that makes saying goodbye so hard.",
+        "author": "A.A. Milne",
+        "translation": "能拥有一些难以割舍的东西，这是多么幸运啊。",
+        "id": 40
+    },
+    {
+        "content": "Dreams are like stars. You may never touch them, but if you follow them, they will lead you to your destiny.",
+        "author": "Liam Payne",
+        "translation": "梦想就像星星。也许你永远无法触碰，但如果你跟随它们，它们将引领你找到人生的路。",
+        "id": 41
+    },
+    {
+        "content": "Happiness adds and multiplies, as we divide it with others.",
+        "author": "A. Nielsen",
+        "translation": "与他人分享快乐，我们会收获加倍的快乐。",
+        "id": 42
+    },
+    {
+        "content": "That was my way of getting through difficult times of low confidence — hard work.",
+        "author": "David Beckham",
+        "translation": "克服自信低潮的艰难时期，我只用一个方法：努力。",
+        "id": 43
+    },
+    {
+        "content": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+        "author": "Rumi",
+        "translation": "昨天的我聪明，所以我想改变世界；今天的我明智，所以我选择改变自己。",
+        "id": 44
+    },
+    {
+        "content": "You've always had the power my dear, you just had to learn it for yourself.",
+        "author": "《绿野仙踪》",
+        "translation": "其实你一直有那份力量，你只是需要学着去使用它。",
+        "id": 45
+    },
+    {
+        "content": "You don't love someone because they're perfect. You love them in spite of the fact that they're not.",
+        "author": "Jodi Picoult",
+        "translation": "不是因为一个人完美你才爱，而是即使那人不完美你也会去爱。",
+        "id": 46
+    },
+    {
+        "content": "What is right is not always popular, and what is popular is not always right.",
+        "author": "Albert Einstein",
+        "translation": "对的事不见得都受欢迎，受欢迎的事不见得都是对的。",
+        "id": 47
+    },
+    {
+        "content": "Just trust yourself, then you will know how to live.",
+        "author": "Johann Wolfgang von Goethe",
+        "translation": "相信自己就对了，你将知道如何过日子。",
+        "id": 48
+    },
+    {
+        "content": "Be careful how you judge people, most of all friends. You don't sum up a man's life in one moment.",
+        "author": "Al Pacino",
+        "translation": "小心你是怎么评判他人的，尤其是朋友。你不能在片刻间总结一个人的一生。",
+        "id": 49
+    },
+    {
+        "content": "Dew turns into frost since tonight; the moon viewed at home is more bright.",
+        "author": "杜甫《月夜忆舍弟》（许渊冲 译）",
+        "translation": "露从今夜白，月是故乡明。",
+        "id": 50
+    },
+    {
+        "content": "If everything was perfect, you would never learn and you would never grow.",
+        "author": "Beyonce Knowles",
+        "translation": "如果一切皆完美，你就永远不会学到东西，永远不会成长。",
+        "id": 51
+    },
+    {
+        "content": "I'm not afraid of storms, for I'm learning how to sail my ship.",
+        "author": "《小妇人》",
+        "translation": "我不惧怕暴风雨，因为我正在学习如何驾驭我的船。",
+        "id": 52
+    },
+    {
+        "content": "So often people are working hard at the wrong thing. Working on the right thing is probably more important than working hard.",
+        "author": "Caterina Fake",
+        "translation": "很多时候人们努力错了方向，在对的事情上努力可能比努力本身还重要。",
+        "id": 53
+    },
+    {
+        "content": "The minute you think, 'Oh, this is how life is', life finds a way of surprising you.",
+        "author": "《爱宠大机密2》",
+        "translation": "当你想着“哦，生活就是这样的”的时候，生活总会给你带来惊喜。",
+        "id": 54
+    },
+    {
+        "content": "It took me 17 years and 114 days to become an overnight success.",
+        "author": "Lionel Messi",
+        "translation": "我花了17年又114天的时间才在一夕之间成功。",
+        "id": 55
+    },
+    {
+        "content": "I am not afraid of tomorrow for I have seen yesterday and I love today.",
+        "author": "William Allen White",
+        "translation": "我不害怕明天，因为我经历过昨天，又热爱今天。",
+        "id": 56
+    },
+    {
+        "content": "We can't all be heroes, because somebody has to sit on the curb and applaud when they go by.",
+        "author": "Will Rogers",
+        "translation": "我们不可能都成为英雄，总得有人在英雄走过的时候坐在路边鼓掌。",
+        "id": 57
+    },
+    {
+        "content": "Youth is happy because it has the capacity to see beauty. Anyone who keeps the ability to see beauty never grows old.",
+        "author": "Franz Kafka",
+        "translation": "青春之欢愉在于发现美的能力。而所有能发现美的人，会永远年轻。",
+        "id": 58
+    },
+    {
+        "content": "Don't settle for what life gives you; make life better and build something.",
+        "author": "Ashton Kutcher",
+        "translation": "不要满足于生活赋予你的，要有所创造，让人生变得更好。",
+        "id": 59
+    },
+    {
+        "content": "True self-discovery begins where your comfort zone ends.",
+        "author": "Adam Braun",
+        "translation": "真正的自我发现，始于你踏出了你的舒适区。",
+        "id": 60
+    },
+    {
+        "content": "Life isn't tied with a bow, but it's still a gift.",
+        "author": "Regina Brett",
+        "translation": "生活没有打上蝴蝶结，但它仍是一份礼物。",
+        "id": 61
+    },
+    {
+        "content": "We don't want to tell our dreams. We want to show them.",
+        "author": "Cristiano Ronaldo",
+        "translation": "我们不想把梦想说出来，而是想展现出来。",
+        "id": 62
+    },
+    {
+        "content": "The secret of discipline is motivation. When a man is sufficiently motivated, discipline will take care of itself.",
+        "author": "Sir Alexander Paterson",
+        "translation": "自律的关键是动机，当一个人的动力足够时，他自然就能自律。",
+        "id": 63
+    },
+    {
+        "content": "To fall in love with yourself is the first secret to happiness.",
+        "author": "Robert Morley",
+        "translation": "爱上自己是通往幸福的第一条奥秘。",
+        "id": 64
+    },
+    {
+        "content": "The most beautiful discovery true friends make is that they can grow separately without growing apart.",
+        "author": "Elizabeth Foley",
+        "translation": "朋友间最美妙的经历，莫过于成长道路不同，却并不因此生出隔阂。",
+        "id": 65
+    },
+    {
+        "content": "To accept ourselves as we are means to value our imperfections as much as our perfections.",
+        "author": "Sandra Bierig",
+        "translation": "所谓接受自己，意味着既重视自己的完美，也珍视自己的不完美。",
+        "id": 66
+    },
+    {
+        "content": "An animal's eyes have the power to speak a great language.",
+        "author": "Martin Buber",
+        "translation": "动物的眼睛有一种神奇的力量，诉说着千言万语。",
+        "id": 67
+    },
+    {
+        "content": "Let your joy be in your journey — not in some distant goal.",
+        "author": "Tim Cook",
+        "translation": "让你的喜悦来自旅途中，而非一个遥远的目标。",
+        "id": 68
+    },
+    {
+        "content": "A warm smile is the universal language of kindness.",
+        "author": "William Arthur Ward",
+        "translation": "温暖的笑容是放之四海皆准的善意表达。",
+        "id": 69
+    },
+    {
+        "content": "Travel and change of place impart new vigor to the mind.",
+        "author": "Seneca",
+        "translation": "去新的地方旅行，能让思维焕发新的活力。",
+        "id": 70
+    },
+    {
+        "content": "Do you want to meet the love of your life? Look in the mirror.",
+        "author": "Byron Katie",
+        "translation": "想见见你的毕生所爱吗？看看镜中吧。",
+        "id": 71
+    },
+    {
+        "content": "A poet is a man who puts up a ladder to a star and climbs it while playing a violin.",
+        "author": "Edmond de Goncourt",
+        "translation": "诗人就是对着星空搭起天梯，然后边向上爬边拉小提琴的人。",
+        "id": 72
+    },
+    {
+        "content": "Until you start believing in yourself, you ain't gonna have a life.",
+        "author": "Rocky Balboa",
+        "translation": "直到你开始相信自己，你的人生才真正开始。",
+        "id": 73
+    },
+    {
+        "content": "ㅤ",
+        "author": "ㅤ",
+        "translation": "ㅤ",
+        "id": 74
+    },
+    {
+        "content": "Don't tell me the sky's the limit when there are footprints on the moon.",
+        "author": "Paul Brandt",
+        "translation": "别对我说天空就是极限，毕竟连月球上都有了人类的脚印。",
+        "id": 75
+    },
+    {
+        "content": "The best day of your life is the one on which you decide your life is your own.",
+        "author": "Bob Moawad",
+        "translation": "你生命中最美好的一天，就是你决定让你的人生属于你自己的那一天。",
+        "id": 76
+    },
+    {
+        "content": "You may forget with whom you laughed, but you will never forget with whom you wept.",
+        "author": "Kahlil Gibran",
+        "translation": "你可能会忘记和你一同笑过的人，却会永远记得和你一同哭过的人。",
+        "id": 77
+    },
+    {
+        "content": "Everything you've ever wanted is on the other side of fear.",
+        "author": "George Addair",
+        "translation": "你想要的一切，都在恐惧的彼端。",
+        "id": 78
+    },
+    {
+        "content": "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.",
+        "author": "H. Jackson Brown Jr.",
+        "translation": "二十年后，比起你做过的事，你会更遗憾于那些你没有去做的事。",
+        "id": 79
+    },
+    {
+        "content": "When life is sweet, say thank you and celebrate. And when life is bitter, say thank you and grow.",
+        "author": "Shauna Niequist",
+        "translation": "日子愉快时，道声谢谢，庆贺吧；日子苦难时，道声谢谢，成长吧。",
+        "id": 80
+    },
+    {
+        "content": "Speak your mind even if your voice shakes.",
+        "author": "Maggie Kuhn",
+        "translation": "勇敢说出你的想法，哪怕声音会颤抖。",
+        "id": 81
+    },
+    {
+        "content": "There is meaning in every journey that is unknown to the traveler.",
+        "author": "Dietrich Bonhoeffer",
+        "translation": "每段旅程里都有不为旅行者所知的意义。",
+        "id": 82
+    },
+    {
+        "content": "Rivers know this: there is no hurry. We shall get there some day.",
+        "author": "A. A. Milne",
+        "translation": "河流知道这一点：无需匆忙。我们终有一日会到达。",
+        "id": 83
+    },
+    {
+        "content": "Growth begins when we begin to accept our own weakness.",
+        "author": "Jean Vanier",
+        "translation": "成长始于接受自己的弱点。",
+        "id": 84
+    },
+    {
+        "content": "It is love that will heal you. It is what heals us all.",
+        "author": "《沉睡魔咒2》",
+        "translation": "爱会治愈你，会治愈我们所有人。",
+        "id": 85
+    },
+    {
+        "content": "Education is not the filling of a pail, but the lighting of a fire.",
+        "author": "William Butler Yeats",
+        "translation": "教育不是注满一桶水，而是点燃一把火。",
+        "id": 86
+    },
+    {
+        "content": "Friendship is the breathing rose, with sweets in every fold.",
+        "author": "Oliver Wendell Holmes Sr.",
+        "translation": "友谊是鲜活的玫瑰，每一道褶皱里都溢着甜香。",
+        "id": 87
+    },
+    {
+        "content": "One never knows what each day is going to bring. The important thing is to be open and ready for it.",
+        "author": "Henry Moore",
+        "translation": "谁也不知道每一天都会带来什么。重要的是要敞开心扉，做好准备。",
+        "id": 88
+    },
+    {
+        "content": "One of the best things in life is seeing a smile on a person's face and knowing that you put it there.",
+        "author": "Lisa Drakeford",
+        "translation": "人生最美妙的事情，莫过于看到他人脸上的笑容，是因你而起。",
+        "id": 89
+    },
+    {
+        "content": "Live each day as if your life had just begun.",
+        "author": "Johann Wolfgang Von Goethe",
+        "translation": "把每天，都当作生命刚开始一样去过吧！",
+        "id": 90
+    },
+    {
+        "content": "Gardens are not made by sitting in the shade.",
+        "author": "Rudyard Kipling",
+        "translation": "光在树荫下坐着，是建不成花园的。",
+        "id": 91
+    },
+    {
+        "content": "Success is what comes after you stop making excuses.",
+        "author": "Luis Galarza",
+        "translation": "当你不再找借口，成功才会到来。",
+        "id": 92
+    },
+    {
+        "content": "Your relationship with yourself sets the tone for every other relationship you have.",
+        "author": "Robert Holden",
+        "translation": "你和你自己的关系，会奠定你其他任何一段关系的基调。",
+        "id": 93
+    },
+    {
+        "content": "Everyone shines, given the right lighting.",
+        "author": "Susan Cain",
+        "translation": "在合适的光源下，每个人都会发光。",
+        "id": 94
+    },
+    {
+        "content": "Do something today that your future self will thank you for.",
+        "author": "Sean Patrick Flanery",
+        "translation": "你今天做的事要让未来的你心存感激。",
+        "id": 95
+    },
+    {
+        "content": "It's not so much how busy you are, but why you are busy.",
+        "author": "Mary Flannery O'Connor",
+        "translation": "重要的不是你有多忙，而是你为何而忙。",
+        "id": 96
+    },
+    {
+        "content": "With self-discipline most anything is possible.",
+        "author": "Theodore Roosevelt",
+        "translation": "只要严于自律，大部分事情都可能做成。",
+        "id": 97
+    },
+    {
+        "content": "Life is a dream. Realize it.",
+        "author": "Mother Teresa",
+        "translation": "生活是一个梦想，实现它。",
+        "id": 98
+    },
+    {
+        "content": "Build your own dreams, or someone else will hire you to build theirs.",
+        "author": "Farrah Gray",
+        "translation": "筑造你自己的梦想吧，否则别人会雇你去建造他们的梦想。",
+        "id": 99
+    },
+    {
+        "content": "A warm smile is the universal language of kindness.",
+        "author": "William Arthur Ward",
+        "translation": "温暖的笑容是放之四海皆准的善意表达。",
+        "id": 100
+    },
+    {
+        "content": "The secret of change is to focus all of your energy, not on fighting the old, but on building the new.",
+        "author": "Dan Millman",
+        "translation": "改变的秘诀，是集中所有精力去建造新的东西，而非与过去抗衡。",
+        "id": 101
+    },
+    {
+        "content": "It is not beauty that endears, it's love that makes us see beauty.",
+        "author": "Leo Tolstoy",
+        "translation": "并非美丽招人爱，而是爱让我们看到了美丽。",
+        "id": 102
+    },
+    {
+        "content": "Pessimism leads to weakness, optimism to power.",
+        "author": "William James",
+        "translation": "悲观导致软弱，乐观带来力量。",
+        "id": 103
+    },
+    {
+        "content": "No winter lasts forever; no spring skips its turn.",
+        "author": "Hal Borland",
+        "translation": "没有一个冬天不可逾越，没有一个春天不可来临。",
+        "id": 104
+    },
+    {
+        "content": "Gratitude is not only the greatest of virtues, but the parent of all others.",
+        "author": "Marcus Tullius Cicero",
+        "translation": "感恩不仅是最伟大的美德，而且是所有美德之母。",
+        "id": 105
+    },
+    {
+        "content": "Once you make a decision, the universe conspires to make it happen.",
+        "author": "Ralph Waldo Emerson",
+        "translation": "一旦你下定决心，整个宇宙都会来帮你实现它。",
+        "id": 106
+    },
+    {
+        "content": "Problems are not stop signs; they are guidelines.",
+        "author": "Robert Schuller",
+        "translation": "问题的出现不是让你止步，而是给你指路。",
+        "id": 107
+    },
+    {
+        "content": "We are made wise not by the recollection of our past, but by the responsibility for our future.",
+        "author": "George Bernard Shaw",
+        "translation": "使我们明智的不是对过去的回忆，而是对未来的责任。",
+        "id": 108
+    },
+    {
+        "content": "Make the best use of what is in your power, and take the rest as it happens.",
+        "author": "Epictetus",
+        "translation": "尽全力做到最好，接受接下来会发生的。",
+        "id": 109
+    },
+    {
+        "content": "We must be willing to get rid of the life we planned so as to have the life that is waiting for us.",
+        "author": "Joseph Campbell",
+        "translation": "我们必须放下规划好的人生，才能拥抱正在等待我们的生活。",
+        "id": 110
+    },
+    {
+        "content": "Enjoy when you can, and endure when you must.",
+        "author": "Johann Wolfgang von Goethe",
+        "translation": "有福享受时，尽情享受；必须承受时，默默忍受。",
+        "id": 111
+    },
+    {
+        "content": "While there's life, there is hope.",
+        "author": "Stephen Hawking",
+        "translation": "生命不息，希望不止。",
+        "id": 112
+    },
+    {
+        "content": "Be true to your word and your work and your friend.",
+        "author": "John Boyle O'Reilly",
+        "translation": "对诺言要信守，对工作要尽责，对朋友要忠诚。",
+        "id": 113
+    },
+    {
+        "content": "Success usually comes to those who are too busy to be looking for it.",
+        "author": "Henry David Thoreau",
+        "translation": "成功往往会降临在那些忙得没空寻找它的人身上。",
+        "id": 114
+    },
+    {
+        "content": "Keep your fears to yourself, but share your courage with others.",
+        "author": "Robert Louis Stevenson",
+        "translation": "把恐惧留在自己心里，把勇气给大家分享。",
+        "id": 115
+    },
+    {
+        "content": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+        "author": "Gandhi",
+        "translation": "珍惜生活，就像死神即将来临；热爱学习，就像生命能够永恒。",
+        "id": 116
+    },
+    {
+        "content": "Never stand begging for that which you have the power to earn.",
+        "author": "Miguel de Cervantes",
+        "translation": "自己能挣到的，就别去乞求。",
+        "id": 117
+    },
+    {
+        "content": "The only source of knowledge is experience.",
+        "author": "Albert Einstein",
+        "translation": "经验是知识的唯一来源。",
+        "id": 118
+    },
+    {
+        "content": "To be mature means to face, and not evade, every fresh crisis that comes.",
+        "author": "Fritz Kunkel",
+        "translation": "成熟意味着去面对任何来临的危机，而不是逃避。",
+        "id": 119
+    },
+    {
+        "content": "He who controls others may be powerful, but he who has mastered himself is mightier still.",
+        "author": "老子",
+        "translation": "胜人者有力，自胜者强。",
+        "id": 120
+    },
+    {
+        "content": "Never promise more than you can perform.",
+        "author": "Publilius Syrus",
+        "translation": "不要许下你无法兑现的承诺。",
+        "id": 121
+    },
+    {
+        "content": "Judge a man by his questions rather than his answers.",
+        "author": "Voltaire",
+        "translation": "评判一个人的依据是他所提的问题，而非他给出的答案。",
+        "id": 122
+    },
+    {
+        "content": "When everything seems to be going against you, remember that the airplane takes off against the wind, not with it.",
+        "author": "Henry Ford",
+        "translation": "当一切于你皆不利时，请记住，飞机也是逆风起飞的。",
+        "id": 123
+    },
+    {
+        "content": "Nothing happens until something moves.",
+        "author": "Albert Einstein",
+        "translation": "无为必将无获。",
+        "id": 124
+    },
+    {
+        "content": "The wisest mind has something yet to learn.",
+        "author": "George Santayana",
+        "translation": "就算最聪明的头脑也需要学习。",
+        "id": 125
+    },
+    {
+        "content": "Things do not change. We change.",
+        "author": "Henry David Thoreau",
+        "translation": "万物并没有改变，变的是我们。",
+        "id": 126
+    },
+    {
+        "content": "All life is an experiment. The more experiments you make the better.",
+        "author": "Emerson",
+        "translation": "生活就是实验，实验的次数越多你就做得越好。",
+        "id": 127
+    },
+    {
+        "content": "Life doesn't get easier or more forgiving; we get stronger and more resilient.",
+        "author": "Steve Maraboli",
+        "translation": "生活从未变得更加轻松或宽容，是我们在一点一点变强、变坚韧。",
+        "id": 128
+    },
+    {
+        "content": "You will never be able to escape from your heart. So it's better to listen to what it has to say.",
+        "author": "Paulo Coelho",
+        "translation": "既然无法逃避自己的心，不如就好好地听听它在说些什么。",
+        "id": 129
+    },
+    {
+        "content": "The best way out is always through.",
+        "author": "Robert Frost",
+        "translation": "找到出口的最好方式就是一路走到底。",
+        "id": 130
+    },
+    {
+        "content": "Ideas shape the course of history.",
+        "author": "约翰·梅纳德·凯恩斯",
+        "translation": "想法影响着历史进程。",
+        "id": 131
+    },
+    {
+        "content": "It's supposed to be hard. If it wasn't hard, everyone would do it.",
+        "author": "《红粉联盟》",
+        "translation": "要做成一件事情本来就不容易，要是不难，岂不是谁都会去做？",
+        "id": 132
+    },
+    {
+        "content": "Give light and people will find the way.",
+        "author": "Ella Baker",
+        "translation": "给予光亮，人们就能找到前方的路。",
+        "id": 133
+    },
+    {
+        "content": "All your lights are red, but I'm green to go.",
+        "author": "Troye Sivan",
+        "translation": "你哪怕示以红灯拒我前行，我也会心向绿灯一刻不停。",
+        "id": 134
+    },
+    {
+        "content": "Do not linger to gather flowers to keep them, but walk on, for flowers will keep themselves blooming all your way.",
+        "author": "泰戈尔",
+        "translation": "不要流连于采集花朵，只管向前走，一路上自会有百花盛开。",
+        "id": 135
+    },
+    {
+        "content": "People grow through experience if they meet life honestly and courageously.",
+        "author": "埃莉诺·罗斯福",
+        "translation": "如果人诚实、勇敢地面对生活，就能从经历中获得成长。",
+        "id": 136
+    },
+    {
+        "content": "I have crossed oceans of time to find you.",
+        "author": "《惊情四百年》",
+        "translation": "我跨越了时间的瀚海来把你寻找。",
+        "id": 137
+    },
+    {
+        "content": "You can't sweep other people off their feet, if you can't be swept off your own.",
+        "author": "Clarence Day",
+        "translation": "如果你自己都不欣赏自己，别人也不会为你倾倒。",
+        "id": 138
+    },
+    {
+        "content": "Not having the best situation, but seeing the best in your situation is the key to happiness.",
+        "author": "Marie Forleo",
+        "translation": "快乐的关键在于，即便境遇不是最佳，但依然能看到处境中最好的一面。",
+        "id": 139
+    },
+    {
+        "content": "Never does nature say one thing and wisdom another.",
+        "author": "Juvenal",
+        "translation": "自然与智慧永不相悖。",
+        "id": 140
+    },
+    {
+        "content": "Why are you trying so hard to fit in when you are born to stand out？",
+        "author": "《水瓶座女孩》",
+        "translation": "你本就生而不凡，为何还要拼命去融入大众呢？",
+        "id": 141
+    },
+    {
+        "content": "Do you know that there's still a chance for you？Cause there's a spark in you.",
+        "author": "Katy Perry, \"Firework\"",
+        "translation": "你知道吗？你还有机会，因为你心中藏有火花。",
+        "id": 142
+    },
+    {
+        "content": "It is by acts and not by ideas that people live.",
+        "author": "Anatole France",
+        "translation": "人依靠行动而活，而非想法。",
+        "id": 143
+    },
+    {
+        "content": "Even the darkest night will end, and the sun will rise.",
+        "author": "《悲惨世界》",
+        "translation": "即使再黑暗的夜也会走到尽头，旭日终将升起。",
+        "id": 144
+    },
+    {
+        "content": "Feel the fear and do it anyway.",
+        "author": "Susan Jeffers",
+        "translation": "感受恐惧，放胆去做。",
+        "id": 145
+    },
+    {
+        "content": "Remember there's no such thing as a small act of kindness. Every act creates a ripple with no logical end.",
+        "author": "Scott Adams",
+        "translation": "记住没有小善之举这回事，每一次善行都会激起无穷尽的连锁反应。",
+        "id": 146
+    },
+    {
+        "content": "Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.",
+        "author": "《春天不是读书天》",
+        "translation": "人生匆匆，如果不时常停下脚步四处瞧瞧，你可能就会错过它。",
+        "id": 147
+    },
+    {
+        "content": "You don't have to bend until you break. You just have to get up.",
+        "author": "Colbie Caillat, \"Try\"",
+        "translation": "你不必一味屈服，让自己受伤，你只需打起精神做自己。",
+        "id": 148
+    },
+    {
+        "content": "We live in the world when we love it.",
+        "author": "泰戈尔",
+        "translation": "我们只有热爱这个世界，才算真正地活着。",
+        "id": 149
+    },
+    {
+        "content": "Catch the moments of your life. Catch them while you're young and quick.",
+        "author": "《我们这一天》",
+        "translation": "趁你还年轻利落，把握住生命中的每一个瞬间吧。",
+        "id": 150
+    },
+    {
+        "content": "Only one thing can make a soul complete, and that thing is love.",
+        "author": "《朗读者》",
+        "translation": "只有一样东西可以让灵魂完整，那就是爱。",
+        "id": 151
+    },
+    {
+        "content": "In any given moment we have two options: to step forward into growth or to step back into safety.",
+        "author": "Abraham Maslow",
+        "translation": "任何时刻我们都有两个选择：往前走向成长，或退后走向安全。",
+        "id": 152
+    },
+    {
+        "content": "Life is a collection of moments. The idea is to have as many good ones as you can.",
+        "author": "《爱情限时恋未尽》",
+        "translation": "生命由一个个瞬间组成，宗旨就是尽可能多地拥抱美好瞬间。",
+        "id": 153
+    },
+    {
+        "content": "Don't let other people get in the way of what you really want.",
+        "author": "《伦敦生活》",
+        "translation": "不要让别人妨碍你追求你真正想要的。",
+        "id": 154
+    },
+    {
+        "content": "It's been my experience that you can nearly always enjoy something if you make up your mind firmly that you will.",
+        "author": "《小小安妮》",
+        "translation": "我的经验是，事情只要下定决心去享受，就基本都能享受。",
+        "id": 155
+    },
+    {
+        "content": "When I am with you, there's no place I'd rather be.",
+        "author": "Clean Bandit, \"Rather Be\"",
+        "translation": "只要有你相伴，便无他处可比拟。",
+        "id": 156
+    },
+    {
+        "content": "May your past be the sound of your feet upon the ground. Carry on.",
+        "author": "Fun., \"Carry On\"",
+        "translation": "愿你的过去只是你前进步伐所踏出的声响，继续前行吧。",
+        "id": 157
+    },
+    {
+        "content": "If you believe in yourself enough and know what you want, you're gonna make it happen.",
+        "author": "Mariah Carey, \"Make It Happen\"",
+        "translation": "如果你足够自信，也知道自己想要什么，就一定会实现心中所想。",
+        "id": 158
+    },
+    {
+        "content": "When you finally go back to your old hometown, you find it wasn't the old home you missed but your childhood.",
+        "author": "Sam Ewing",
+        "translation": "当你终于重归故里，你会发现自己思念的，不是故乡，而是童年。",
+        "id": 159
+    },
+    {
+        "content": "Sometimes a problem is just an opportunity in disguise.",
+        "author": "《蛇蝎女佣》",
+        "translation": "有时候问题不过是伪装起来的机会。",
+        "id": 160
+    },
+    {
+        "content": "Life is short; the world is wide, and I want to make some memories.",
+        "author": "《妈妈咪呀2》",
+        "translation": "生命短暂，世界广阔，我想制造些回忆。",
+        "id": 161
+    },
+    {
+        "content": "Whatever happens tomorrow, we've had today.",
+        "author": "《一天》",
+        "translation": "不管明天会发生什么，至少我们拥有今天。",
+        "id": 162
+    },
+    {
+        "content": "How are you to imagine anything if the images are always provided for you?",
+        "author": "《超脱》",
+        "translation": "如果你能想到的东西都在眼前，你的思维又如何插上想象的翅膀呢？",
+        "id": 163
+    },
+    {
+        "content": "It's strange. I felt less lonely when I didn't know you.",
+        "author": "Jean-Paul Sartre",
+        "translation": "真是奇怪。在认识你之前，我没有感到过如此孤单。",
+        "id": 164
+    },
+    {
+        "content": "Selfishness is not living as one wishes to live. It is asking others to live as one wishes to live.",
+        "author": "Oscar Wilde",
+        "translation": "过自己想要的生活不是自私，要求别人按自己的意愿生活才是。",
+        "id": 165
+    },
+    {
+        "content": "If you don't go after what you want, you'll never have it.",
+        "author": "Nora Roberts",
+        "translation": "不去追逐你所渴求的，你就永远也无法拥有它。",
+        "id": 166
+    },
+    {
+        "content": "Where we love is home, home that our feet may leave, but not our hearts.",
+        "author": "Oliver Wendell Holmes Sr.",
+        "translation": "家，是爱之所在。也许我们脚步渐远，但心从未离开。",
+        "id": 167
+    },
+    {
+        "content": "It is not the destination so much as the journey, they say.",
+        "author": "《加勒比海盗4：惊涛怪浪》",
+        "translation": "人们说，旅行的目的地不如旅程来得重要。",
+        "id": 168
+    },
+    {
+        "content": "Far and away the best prize that life has to offer is the chance to work hard at work worth doing.",
+        "author": "Theodore Roosevelt",
+        "translation": "毋庸置疑，生活赋予的最好礼物就是有机会努力去做值得做的事情。",
+        "id": 169
+    },
+    {
+        "content": "Good teachers, they inspire you, they entertain you, and you end up learning a ton even when you don't know it.",
+        "author": "Nicholas Sparks",
+        "translation": "好的老师会激励你，给你带来欢乐，悄然无声地教会你很多东西。",
+        "id": 170
+    },
+    {
+        "content": "Keep your head up in failure, and your head down in success.",
+        "author": "Jerry Seinfeld",
+        "translation": "失败时，要高昂起头；成功时，要保持谦逊。",
+        "id": 171
+    },
+    {
+        "content": "Praising what is lost makes the remembrance dear.",
+        "author": "William Shakespeare",
+        "translation": "赞美已经失去的事物，让回忆变得惹人喜爱。",
+        "id": 172
+    },
+    {
+        "content": "I think togetherness is a very important ingredient to family life.",
+        "author": "Barbara Bush",
+        "translation": "在我看来，团聚于家庭生活而言不可或缺。",
+        "id": 173
+    },
+    {
+        "content": "Water can carve its way even through stone and when trapped, water makes a new path.",
+        "author": "《艺伎回忆录》",
+        "translation": "水滴能穿石，即便困于一隅，也能另辟蹊径。",
+        "id": 174
+    },
+    {
+        "content": "You can tell a lot about a person by what's on their playlist.",
+        "author": "《再次出发之纽约遇见你》",
+        "translation": "通过一个人的播放列表，你可以了解到很多关于他的东西。",
+        "id": 175
+    },
+    {
+        "content": "Our growth depends not on how many experiences we devour, but on how many we digest.",
+        "author": "Ralph W. Sockman",
+        "translation": "成长靠的不是经历有多丰富，而是对过往经历的细细品味和领会。",
+        "id": 176
+    },
+    {
+        "content": "Whatever is worth doing at all is worth doing well.",
+        "author": "Philip Stanhope",
+        "translation": "任何值得做的事，都值得将其做好。",
+        "id": 177
+    },
+    {
+        "content": "A positive attitude will have positive results because attitudes are contagious.",
+        "author": "Zig Ziglar",
+        "translation": "积极的态度会带来积极的结果，因为态度是具有感染力的。",
+        "id": 178
+    },
+    {
+        "content": "Silence is the sleep that nourishes wisdom.",
+        "author": "Francis Bacon",
+        "translation": "沉默，好比睡眠，会滋养出智慧。",
+        "id": 179
+    },
+    {
+        "content": "I wouldn't give up being myself for even one second.",
+        "author": "《摩登家庭》",
+        "translation": "我不会放弃做自己，哪怕一秒也不行。",
+        "id": 180
+    },
+    {
+        "content": "Neither abstinence nor excess ever renders man happy.",
+        "author": "伏尔泰",
+        "translation": "不论是节制还是过度都不能给人带来快乐。",
+        "id": 181
+    },
+    {
+        "content": "If we're kind and polite, the world will be right.",
+        "author": "《帕丁顿熊2》",
+        "translation": "如果我们温和善良、彬彬有礼的话，世界将会变美好。",
+        "id": 182
+    },
+    {
+        "content": "The only real failure is the failure to try and the measure of success is how we cope with disappointment.",
+        "author": "《涉外大饭店》",
+        "translation": "唯一真正的失败是放弃尝试；衡量成功的标准是我们如何面对失望。",
+        "id": 183
+    },
+    {
+        "content": "The time spent with you allowed me to feel again.",
+        "author": "《大洋之间的灯光》",
+        "translation": "与你共度的时光，让我重新苏醒。",
+        "id": 184
+    },
+    {
+        "content": "If you want the best the world has to offer, offer the world your best.",
+        "author": "Neale Donald Walsch",
+        "translation": "若想得到世界上最好的东西，先向世界展现最好的你。",
+        "id": 185
+    },
+    {
+        "content": "I like to feel his eyes on me when I look away.",
+        "author": "《爱在黎明破晓前》",
+        "translation": "我喜欢当我看向别处时他的目光停留在我身上的感觉。",
+        "id": 186
+    },
+    {
+        "content": "You never know how far you can go unless you run.",
+        "author": "《一代骄马》",
+        "translation": "你如果不跑起来，就永远不知道自己能走多远。",
+        "id": 187
+    },
+    {
+        "content": "A clear vision, backed by definite plans, gives you a tremendous feeling of confidence and personal power.",
+        "author": "Brian Tracy",
+        "translation": "一个清晰的愿景，加以明确计划的支持，会给你极大的信心和个人力量。",
+        "id": 188
+    },
+    {
+        "content": "They say when you meet the love of your life, time stops, and that's true.",
+        "author": "《大鱼》",
+        "translation": "人们说当你遇上你的挚爱，时间会停止，事实的确如此。",
+        "id": 189
+    },
+    {
+        "content": "Everybody's got a job to do, and I do mine as best I can.",
+        "author": "玛丽·马特林",
+        "translation": "每个人都有自己的事情要做，我会竭尽全力把属于自己的做好。",
+        "id": 190
+    },
+    {
+        "content": "Even if you're on the right track, you'll get run over if you just sit there.",
+        "author": "Will Rogers",
+        "translation": "即便你刚好处于正轨，如果你只坐在那里的话，还是会被撞翻。",
+        "id": 191
+    },
+    {
+        "content": "Either you run the day or the day runs you.",
+        "author": "Jim Rohn",
+        "translation": "要么你主宰生活，要么让生活主宰你。",
+        "id": 192
+    },
+    {
+        "content": "It's good to set limits for oneself, but there comes a moment when we must destroy what we have constructed.",
+        "author": "Josef Koudelka",
+        "translation": "为自己设限是不错，不过有时候我们必须打破自己一手建立的一切。",
+        "id": 193
+    },
+    {
+        "content": "The morning, which is the most memorable season of the day, is the awakening hour.",
+        "author": "梭罗",
+        "translation": "在一天之中，清晨最值得怀恋和纪念，这是一段让万物醒悟的光阴。",
+        "id": 194
+    },
+    {
+        "content": "Happiness lies in the joy of achievement and the thrill of creative effort.",
+        "author": "福兰克林·罗斯福",
+        "translation": "幸福来源于收获时的欢乐和创作时的激动。",
+        "id": 195
+    },
+    {
+        "content": "Without deviation from the norm, progress is not possible.",
+        "author": "Frank Zappa",
+        "translation": "不偏离常规，就无法取得进步。",
+        "id": 196
+    },
+    {
+        "content": "Life is a sum of all your choices. So, what are you doing today?",
+        "author": "Albert Camus",
+        "translation": "生活就是你所有选择的总和，那么，你今天要做什么？",
+        "id": 197
+    },
+    {
+        "content": "Art doesn't have to do anything. It just has to be there for the fierce pleasure we take in doing it.",
+        "author": "Raymond Carver",
+        "translation": "艺术不需要做什么。在我们从事艺术时，能让人感受到强烈的愉悦就够了。",
+        "id": 198
+    },
+    {
+        "content": "Real generosity toward the future lies in giving all to the present.",
+        "author": "Albert Camus",
+        "translation": "将一切奉献给当下，就是对未来的真正慷慨。",
+        "id": 199
+    },
+    {
+        "content": "I am prepared for the worst, but hope for the best.",
+        "author": "班杰明‧迪斯雷利",
+        "translation": "我已做好最坏的打算，但仍期待最好的结果。",
+        "id": 200
+    },
+    {
+        "content": "I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.",
+        "author": "尼尔·阿姆斯特朗",
+        "translation": "我相信每个人的心跳次数有限，所以我不想浪费任何一下。",
+        "id": 201
+    },
+    {
+        "content": "Most of us have far more courage than we ever dreamed we possessed.",
+        "author": "戴尔·卡内基",
+        "translation": "我们大部分人所拥有的勇气比我们梦想得到的要多得多。",
+        "id": 202
+    },
+    {
+        "content": "Success is nothing more than a few simple disciplines, practiced every day.",
+        "author": "吉姆·罗恩",
+        "translation": "成功不外乎是每天对一些基本技能的操练。",
+        "id": 203
+    },
+    {
+        "content": "No matter how many goals you have achieved, you must set your sights on a higher one.",
+        "author": "杰西卡·萨维奇",
+        "translation": "不管你实现了多少目标，总要定睛于下一个更远大的。",
+        "id": 204
+    },
+    {
+        "content": "When there is a strong woman character in a story — that always grabs me.",
+        "author": "李安",
+        "translation": "有坚强的女性角色的故事总能抓住我的心。",
+        "id": 205
+    },
+    {
+        "content": "Either move or be moved.",
+        "author": "艾泽拉·庞德",
+        "translation": "要么主动寻求改变，要么被动接受改变。",
+        "id": 206
+    },
+    {
+        "content": "Do more of what makes you happy.",
+        "author": "Carmel McConnell",
+        "translation": "多做些让你快乐的事。",
+        "id": 207
+    },
+    {
+        "content": "When love and skill work together, expect a masterpiece.",
+        "author": "约翰·拉斯金",
+        "translation": "当热爱与技巧融为一体，就能孕育出杰作。",
+        "id": 208
+    },
+    {
+        "content": "When we have become completely free of the need to judge, we will also become completely free of the fear of being judged.",
+        "author": "Henri Nouwen",
+        "translation": "当我们无需评断别人时，就根本不用怕被别人评断了。",
+        "id": 209
+    },
+    {
+        "content": "The more things you do, the more you can do.",
+        "author": "露西尔·鲍尔",
+        "translation": "你做的事情越多，能做到的事情就越多。",
+        "id": 210
+    },
+    {
+        "content": "They invented hugs to let people know you love them without saying anything.",
+        "author": "Bil Keane",
+        "translation": "拥抱，是让你一句话也不用说，就让别人知道你爱他们。",
+        "id": 211
+    },
+    {
+        "content": "The best cure for the body is a quiet mind.",
+        "author": "拿破仑",
+        "translation": "对身体最好的治疗就是让头脑安静。",
+        "id": 212
+    },
+    {
+        "content": "One way to keep momentum going is to have constantly greater goals.",
+        "author": "迈克尔·考达",
+        "translation": "保持前进动力的方法就是，一直拥有更远大的目标。",
+        "id": 213
+    }
+]
