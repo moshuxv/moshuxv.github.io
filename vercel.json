@@ -1,0 +1,8 @@
+{
+  "build": {
+    "env": {
+      "BUN_FLAGS": "--no-install", // 禁用 Bun
+      "NPM_FLAGS": "" // 强制使用 npm
+    }
+  }
+}
