@@ -3,17 +3,17 @@ import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } fro
 export const theme: ThemeUserConfig = {
   // === Basic configuration ===
   /** Title for your website. Will be used in metadata and as browser tab title. */
-  title: 'Moshuxv blog',
+  title: 'Astro Theme Pure',
   /** Will be used in index page & copyright declaration */
-  author: 'Moshuxv',
+  author: 'Pure Lab',
   /** Description metadata for your website. Can be used in page metadata. */
   description: 'Stay hungry, stay foolish',
   /** The default favicon for your site which should be a path to an image in the `public/` directory. */
   favicon: '/favicon/favicon.ico',
   /** Specify the default language for this site. */
   locale: {
-    lang: 'zh-cn',
-    attrs: 'zh-cn',
+    lang: 'en-US',
+    attrs: 'en_US',
     // Date locale
     dateLocale: 'en-US',
     dateOptions: {
@@ -24,7 +24,7 @@ export const theme: ThemeUserConfig = {
   },
   /** Set a logo image to show in the homepage. */
   logo: {
-    src: 'src/assets/logo.jpg',
+    src: 'src/assets/avatar.png',
     alt: 'Avatar'
   },
 
@@ -47,8 +47,10 @@ export const theme: ThemeUserConfig = {
   /** Configure the header of your site. */
   header: {
     menu: [
-      { title: 'Posts', link: '/blog' },
-      // { title: '项目', link: '/projects' },
+      { title: 'Blog', link: '/blog' },
+      { title: 'Docs', link: '/docs' },
+      { title: 'Projects', link: '/projects' },
+      { title: 'Links', link: '/links' },
       { title: 'About', link: '/about' }
     ]
   },
@@ -57,13 +59,13 @@ export const theme: ThemeUserConfig = {
   footer: {
     // Registration information for ICP (optional)
     registration: {
-      url: 'https://beian.miit.gov.cn/',
-      text: '桂ICP备2023001992号  '
+      url: 'https://icp.gov.moe/?keyword=APTX4869',
+      text: 'Moe ICP APTX4869'
     },
     /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
     credits: true,
     /** Optional details about the social media accounts for this site. */
-    social: { github: 'https://github.com/moshuxv' }
+    social: { github: 'https://github.com/cworld1/astro-theme-pure' }
   },
 
   content: {
