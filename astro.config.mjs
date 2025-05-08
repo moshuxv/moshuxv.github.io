@@ -1,7 +1,8 @@
 // @ts-check
 
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
-import vercel from '@astrojs/vercel'
+// 移除不必要的vercel适配器导入
+// import vercel from '@astrojs/vercel'
 import AstroPureIntegration from 'astro-pure'
 import { defineConfig } from 'astro/config'
 import rehypeKatex from 'rehype-katex'
@@ -29,15 +30,18 @@ import config from './src/site.config.ts'
 // https://astro.build/config
 export default defineConfig({
   // Top-Level Options
-  site: 'https://astro-pure.js.org',
+  // 修改为实际的网站URL
+  site: 'https://msx.ink',
   // base: '/docs',
   trailingSlash: 'never',
 
+  // 移除适配器配置，因为静态输出不需要
   // Adapter
   // https://docs.astro.build/en/guides/deploy/
   // 1. Vercel (serverless)
-  adapter: vercel(),
-  output: 'server',
+  // adapter: vercel(),
+  // 改为静态输出
+  output: 'static',
   // 2. Vercel (static)
   // adapter: vercelStatic(),
   // 3. Local (standalone)
