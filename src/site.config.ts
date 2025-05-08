@@ -1,41 +1,41 @@
 import type { CardListData, Config, IntegrationUserConfig, ThemeUserConfig } from 'astro-pure/types'
 
 export const theme: ThemeUserConfig = {
-  // === Basic configuration ===
-  /** Title for your website. Will be used in metadata and as browser tab title. */
+  // === 基础配置 ===
+  /** 网站的标题。将用于元数据和浏览器标签标题。 */
   title: 'Moshuxv blog',
-  /** Will be used in index page & copyright declaration */
+  /** 将用于首页和版权声明 */
   author: 'Moshuxv',
-  /** Description metadata for your website. Can be used in page metadata. */
+  /** 网站的元数据描述。可用于页面元数据。 */
   description: 'Stay hungry, stay foolish',
-  /** The default favicon for your site which should be a path to an image in the `public/` directory. */
+  /** 网站的默认图标，应为 public/ 目录下图片的路径 */
   favicon: '/favicon/favicon.ico',
-  /** Specify the default language for this site. */
+  /** 指定网站的默认语言 */
   locale: {
     lang: 'zh-cn',
     attrs: 'zh-cn',
-    // Date locale
-    dateLocale: 'en-US',
+    // 日期区域设置
+    dateLocale: 'zh-cn',
     dateOptions: {
       day: 'numeric',
       month: 'short',
       year: 'numeric'
     }
   },
-  /** Set a logo image to show in the homepage. */
+  /** 设置首页显示的 logo 图片 */
   logo: {
     src: 'src/assets/logo.jpg',
     alt: 'Avatar'
   },
 
-  // === Global configuration ===
+  // === 全局配置 ===
   titleDelimiter: '•',
   prerender: true,
   npmCDN: 'https://cdn.jsdelivr.net/npm',
 
-  // still in test
+  // 仍在测试
   head: [
-    /* Telegram channel */
+    /* Telegram 频道 */
     // {
     //   tag: 'meta',
     //   attrs: { name: 'telegram:channel', content: '@cworld0_cn' },
@@ -44,7 +44,7 @@ export const theme: ThemeUserConfig = {
   ],
   customCss: [],
 
-  /** Configure the header of your site. */
+  /** 配置网站头部 */
   header: {
     menu: [
       { title: 'Posts', link: '/blog' },
@@ -53,40 +53,40 @@ export const theme: ThemeUserConfig = {
     ]
   },
 
-  /** Configure the footer of your site. */
+  /** 配置网站页脚 */
   footer: {
-    // Registration information for ICP (optional)
+    // ICP备案信息（可选）
     registration: {
       url: 'https://beian.miit.gov.cn/',
       text: '桂ICP备2023001992号  '
     },
-    /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
+    /** 是否在页脚显示"由 Astro & Pure 主题驱动"的链接 */
     credits: false,
-    /** Optional details about the social media accounts for this site. */
+    /** 网站社交媒体账号的可选信息 */
     social: { github: 'https://github.com/moshuxv' }
   },
 
   content: {
     externalLinksContent: ' ↗',
-    /** Blog page size for pagination (optional) */
+    /** 博客分页的页面尺寸（可选） */
     blogPageSize: 8,
-    externalLinkArrow: true, // show external link arrow
-    // Currently support weibo, x, bluesky
+    externalLinkArrow: true, // 显示外链箭头
+    // 当前支持微博、X、蓝空
     share: ['weibo', 'x', 'bluesky']
   }
 }
 
 export const integ: IntegrationUserConfig = {
-  // Links menagement
-  // See: https://astro-pure.js.org/docs/integrations/links
+  // 友链管理
+  // 参见：https://astro-pure.js.org/docs/integrations/links
   links: {
-    // Friend logbook
+    // 友链日志
     logbook: [
       { date: '2024-07-01', content: 'Lorem ipsum dolor sit amet.' },
       { date: '2024-07-01', content: 'vidit suscipit at mei.' },
       { date: '2024-07-01', content: 'Quem denique mea id.' }
     ],
-    // Yourself link info
+    // 自身链接信息
     applyTip: [
       { name: 'Name', val: theme.title },
       { name: 'Desc', val: theme.description || 'Null' },
@@ -94,48 +94,39 @@ export const integ: IntegrationUserConfig = {
       { name: 'Avatar', val: 'https://astro-pure.js.org/favicon/favicon.ico' }
     ]
   },
-  // Enable page search function
+  // 启用页面搜索功能
   pagefind: true,
-  // Add a random quote to the footer (default on homepage footer)
-  // See: https://astro-pure.js.org/docs/integrations/advanced#web-content-render
+  // 在页脚添加随机引用（默认在首页页脚）
+  // 参见：https://astro-pure.js.org/docs/integrations/advanced#web-content-render
   quote: {
-    // https://developer.hitokoto.cn/sentence/#%E8%AF%B7%E6%B1%82%E5%9C%B0%E5%9D%80
-    // server: 'https://v1.hitokoto.cn/?c=i',
-    // target: (data) => (data as { hitokoto: string }).hitokoto || 'Error'
-    // https://github.com/lukePeavey/quotable
     server: 'https://api.quotable.io/quotes/random?maxLength=60',
     target: `(data) => data[0].content || 'Error'`
   },
-  // Tailwindcss typography
-  // See: https://astro-pure.js.org/docs/integrations/others#tailwindcsstypography
+  // Tailwindcss 排版
+  // 参见：https://astro-pure.js.org/docs/integrations/others#tailwindcsstypography
   typography: {
-    // https://github.com/tailwindlabs/tailwindcss-typography
     class: 'prose text-base text-muted-foreground'
   },
-  // A lightbox library that can add zoom effect
-  // See: https://astro-pure.js.org/docs/integrations/others#medium-zoom
+  // 可添加缩放效果的灯箱库
+  // 参见：https://astro-pure.js.org/docs/integrations/others#medium-zoom
   mediumZoom: {
-    enable: true, // disable it will not load the whole library
+    enable: true, // 禁用后将不会加载整个库
     selector: '.prose .zoomable',
     options: {
       className: 'zoomable'
     }
   },
-  // Comment system
+  // 评论系统
   waline: {
     enable: true,
-    // Server service link
     server: 'https://astro-theme-pure-waline.arthals.ink/',
-    // Refer https://waline.js.org/en/guide/features/emoji.html
     emoji: ['bmoji', 'weibo'],
-    // Refer https://waline.js.org/en/reference/client/props.html
     additionalConfigs: {
-      // search: false,
       pageview: true,
       comment: true,
       locale: {
         reaction0: 'Like',
-        placeholder: 'Welcome to comment. (Email to receive replies. Login is unnecessary)'
+        placeholder: '欢迎留言。（填写邮箱可接收回复，无需登录）'
       },
       imageUploader: false
     }
@@ -143,22 +134,22 @@ export const integ: IntegrationUserConfig = {
 }
 
 export const terms: CardListData = {
-  title: 'Terms content',
+  title: '条款内容',
   list: [
     {
-      title: 'Privacy Policy',
+      title: '隐私政策',
       link: '/terms/privacy-policy'
     },
     {
-      title: 'Terms and Conditions',
+      title: '服务条款',
       link: '/terms/terms-and-conditions'
     },
     {
-      title: 'Copyright',
+      title: '版权声明',
       link: '/terms/copyright'
     },
     {
-      title: 'Disclaimer',
+      title: '免责声明',
       link: '/terms/disclaimer'
     }
   ]
