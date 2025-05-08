@@ -1,7 +1,7 @@
 ---
 title: 网页打字机效果和每日一句api
 description: 扇贝单词每日一句api调用.
-publishDate: 2025-08-07
+publishDate: 2025-05-09
 language: 'zh-cn'
 heroImage: { src: './1.jpg', color: '#D58388' }
 tags:
