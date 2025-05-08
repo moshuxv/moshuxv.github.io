@@ -27,7 +27,7 @@
 
           // 然后加载后续内容
           try {
-              const data = await fetch('public/assets/1.json').then(res => res.json());
+              const data = await fetch('/assets/1.json').then(res => res.json());
               const item = data[Math.floor(Math.random() * data.length)];
               // 逐行输入内容
               for (let i = 0; i < LINES.length; i++) {
