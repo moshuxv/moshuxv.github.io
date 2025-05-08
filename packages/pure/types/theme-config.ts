@@ -131,7 +131,7 @@ export const ThemeConfigSchema = () =>
       /** Enable displaying a “Astro & Pure theme powered” link in your site’s footer. */
       credits: z
         .boolean()
-        .default(true)
+        .default(false)
         .describe('Enable displaying a “Built with Starlight” link in your site’s footer.'),
 
       /**
