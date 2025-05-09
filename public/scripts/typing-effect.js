@@ -1,16 +1,16 @@
 (function () {
     // 配置参数
-    const SPEED = 3;   // 打字速度（毫秒）
+    const SPEED = 30;   // 打字速度（毫秒）
     const INITIAL_LINES = [
         { id: 'line1', text: 'welcome to moshuxv blog' },
         { id: 'line2', text: '欢迎访问莫书旭的博客' }
     ];
     const ADDITIONAL_LINES = [
-        { text: '——Who？', pause: 100 },
-        { text: "——It's me.", pause: 100 },
+        { text: '——Who？', pause: 1000 },
+        { text: "——It's me.", pause: 1000 },
         { text: 'Haha, just making a joke.', pause: 1000 }
     ];
-    const WAIT_TIME = 200; // 等待时间（毫秒）
+    const WAIT_TIME = 2000; // 等待时间（毫秒）
     const LINES = [
         { id: 'line1', key: 'content' },
         { id: 'line2', key: 'translation' },
@@ -21,11 +21,19 @@
     async function init() {
         // 预计算所有文本的最大尺寸
         const { maxWidth, maxHeight } = await calculateMaxTextSize();
+        
+        // 获取视口宽度
+        const viewportWidth = window.innerWidth;
+        
+        // 确保容器宽度不超过视口宽度
+        const containerWidth = Math.min(maxWidth, viewportWidth);
+        
         // 固定容器尺寸
         const container = document.getElementById('typing-container');
         if (container) {
-            container.style.width = `${maxWidth}px`;
+            container.style.width = `${containerWidth}px`;
             container.style.height = `${maxHeight}px`;
+            container.style.overflowX = 'auto'; // 当内容超过容器宽度时显示水平滚动条
         }
 
         // 先显示初始内容
@@ -114,7 +122,7 @@
             await typeText(el, line.text);
             if (line.id === 'line2') {
                 const cursor = addBlinkingCursor(line.id);
-                await wait(100, cursor); // 停顿 2 秒
+                await wait(2000, cursor); // 停顿 2 秒
             }
         }
     }
