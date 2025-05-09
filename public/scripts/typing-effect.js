@@ -16,6 +16,7 @@
         { id: 'line2', key: 'translation' },
         { id: 'line3', key: 'author', prefix: '—— ' }
     ];
+    const MARGIN = 15; // 左右边距（像素）
 
     // 核心逻辑
     async function init() {
@@ -25,14 +26,19 @@
         // 获取视口宽度
         const viewportWidth = window.innerWidth;
         
-        // 确保容器宽度不超过视口宽度
-        const containerWidth = Math.min(maxWidth, viewportWidth);
+        // 计算包含边距的最大宽度
+        const containerWidthWithMargin = maxWidth + MARGIN * 2;
+        
+        // 确保容器宽度不超过视口宽度，同时保留边距
+        const containerWidth = Math.min(containerWidthWithMargin, viewportWidth);
         
         // 固定容器尺寸
         const container = document.getElementById('typing-container');
         if (container) {
             container.style.width = `${containerWidth}px`;
             container.style.height = `${maxHeight}px`;
+            container.style.padding = `0 ${MARGIN}px`; // 设置左右边距
+            container.style.boxSizing = 'border-box'; // 确保内边距包含在宽度内
             container.style.overflowX = 'auto'; // 当内容超过容器宽度时显示水平滚动条
         }
 
