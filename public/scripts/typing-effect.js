@@ -16,7 +16,8 @@
         { id: 'line2', key: 'translation' },
         { id: 'line3', key: 'author', prefix: '—— ' }
     ];
-    const MARGIN = 35; // 外边距（像素）
+    const MARGIN = 25; // 外边距（像素）
+    const LINE_SPACING = 5; // 行间距（像素）
 
     // 核心逻辑
     async function init() {
@@ -36,9 +37,10 @@
         const container = document.getElementById('typing-container');
         if (container) {
             container.style.width = `calc(${containerWidth}px - ${MARGIN * 2}px)`; // 减去外边距宽度
-            container.style.height = `${maxHeight}px`;
+            container.style.height = `${maxHeight + (LINES.length + INITIAL_LINES.length + ADDITIONAL_LINES.length - 1) * LINE_SPACING}px`;
             container.style.margin = `${MARGIN}px auto`; // 设置上下外边距为MARGIN，左右居中
             container.style.overflowX = 'auto'; // 当内容超过容器宽度时显示水平滚动条
+            container.style.overflowY = 'hidden'; // 隐藏垂直滚动条
         }
 
         // 先显示初始内容
@@ -113,6 +115,7 @@
         for (const line of ADDITIONAL_LINES) {
             measurementDiv.textContent = line.text;
             maxWidth = Math.max(maxWidth, measurementDiv.offsetWidth);
+            totalHeight += measurementDiv.offsetHeight;
         }
 
         // 移除测量元素
