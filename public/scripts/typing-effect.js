@@ -10,7 +10,7 @@
           { text: "——It's me.", pause: 1000 },
           { text: 'Haha, just making a joke.', pause: 1000 }
       ];
-      const WAIT_TIME = 20; // 等待时间（毫秒）
+      const WAIT_TIME = 2000; // 等待时间（毫秒）
       const LINES = [
           { id: 'line1', key: 'content' },
           { id: 'line2', key: 'translation' },

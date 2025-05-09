@@ -75,12 +75,37 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
         <Button title='More about me' class='w-fit self-end' href='/about' style='ahead' />
       </Section> -->
       <Section>
-        <div style="height: 150px;width: 100vm; position: relative; overflow: hidden;">
-        <div class="typing-line" id="line1"></div>
-        <div class="typing-line" id="line2"></div>
-        <div class="typing-line" id="line3"></div>
-        </div>
-
+          <div style="height: 150px; width: 400px; position: relative; overflow: hidden;">
+            <div 
+              id="line1" 
+              style="
+                width: 100%;
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-break: break-all;
+                margin: 0;
+              "></div>
+            
+            <div 
+              id="line2" 
+              style="
+                width: 100%;
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-break: break-all;
+                margin: 0;
+              "></div>
+            
+            <div 
+              id="line3" 
+              style="
+                width: 100%;
+                white-space: normal;
+                overflow-wrap: break-word;
+                word-break: break-all;
+                margin: 0;
+              "></div>
+          </div>
         
       </Section>
       {
