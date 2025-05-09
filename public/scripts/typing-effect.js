@@ -17,12 +17,11 @@
         { id: 'line3', key: 'author', prefix: '—— ' }
     ];
     const MARGIN = 25; // 外边距（像素）
-    const LINE_SPACING = 5; // 行间距（像素）
 
     // 核心逻辑
     async function init() {
-        // 预计算所有文本的最大尺寸
-        const { maxWidth, maxHeight } = await calculateMaxTextSize();
+        // 预计算所有文本的最大宽度
+        const { maxWidth } = await calculateMaxTextSize();
 
         // 获取视口宽度
         const viewportWidth = window.innerWidth;
@@ -33,19 +32,12 @@
         // 确保容器宽度不超过视口宽度，同时保留外边距
         const containerWidth = Math.min(containerWidthWithMargin, viewportWidth);
 
-        // 计算实际需要的行数
-        const totalLines = Math.max(
-            INITIAL_LINES.length,
-            LINES.length + ADDITIONAL_LINES.length
-        );
-
-        // 固定容器尺寸
+        // 固定容器宽度
         const container = document.getElementById('typing-container');
         if (container) {
             container.style.width = `calc(${containerWidth}px - ${MARGIN * 2}px)`;
-            container.style.height = `${maxHeight + (totalLines - 1) * LINE_SPACING}px`;
-            container.style.margin = `${MARGIN}px auto`;
-            container.style.overflow = 'hidden'; // 隐藏所有滚动条
+            container.style.margin = `${MARGIN}px auto`; // 设置上下外边距为MARGIN，左右居中
+            container.style.overflowX = 'auto'; // 当内容超过容器宽度时显示水平滚动条
         }
 
         // 先显示初始内容
@@ -93,15 +85,11 @@
         document.body.appendChild(measurementDiv);
 
         let maxWidth = 0;
-        let maxLineHeight = 0;
-        let totalHeight = 0;
 
         // 测量初始内容
         for (const line of INITIAL_LINES) {
             measurementDiv.textContent = line.text;
             maxWidth = Math.max(maxWidth, measurementDiv.offsetWidth);
-            maxLineHeight = Math.max(maxLineHeight, measurementDiv.offsetHeight);
-            totalHeight += measurementDiv.offsetHeight;
         }
 
         // 测量后续内容
@@ -112,8 +100,6 @@
                 const text = line.prefix ? line.prefix + item[line.key] : item[line.key];
                 measurementDiv.textContent = text;
                 maxWidth = Math.max(maxWidth, measurementDiv.offsetWidth);
-                maxLineHeight = Math.max(maxLineHeight, measurementDiv.offsetHeight);
-                totalHeight += measurementDiv.offsetHeight;
             }
         } catch (e) {
             console.error('Error measuring text:', e);
@@ -123,21 +109,18 @@
         for (const line of ADDITIONAL_LINES) {
             measurementDiv.textContent = line.text;
             maxWidth = Math.max(maxWidth, measurementDiv.offsetWidth);
-            maxLineHeight = Math.max(maxLineHeight, measurementDiv.offsetHeight);
-            totalHeight += measurementDiv.offsetHeight;
         }
 
         // 移除测量元素
         document.body.removeChild(measurementDiv);
 
-        return { maxWidth, maxHeight: totalHeight, maxLineHeight };
+        return { maxWidth };
     }
 
     async function showInitialLines() {
         for (const line of INITIAL_LINES) {
             const el = document.getElementById(line.id);
             await typeText(el, line.text);
-            el.style.marginBottom = `${LINE_SPACING}px`; // 设置行间距
             if (line.id === 'line2') {
                 const cursor = addBlinkingCursor(line.id);
                 await wait(2000, cursor); // 停顿 2 秒
@@ -159,18 +142,13 @@
         for (const line of INITIAL_LINES.reverse()) {
             const el = document.getElementById(line.id);
             await backspaceText(el, line.text.length);
-            if (line.id !== INITIAL_LINES[0].id) { // 最后一行不设置底部间距
-                el.style.marginBottom = `${LINE_SPACING}px`;
-            }
         }
     }
 
     async function typeLines(item) {
         // 清空所有行内容
         LINES.forEach(line => {
-            const el = document.getElementById(line.id);
-            el.innerHTML = '';
-            el.style.marginBottom = `${LINE_SPACING}px`; // 设置行间距
+            document.getElementById(line.id).innerHTML = '';
         });
 
         // 逐行输入内容
