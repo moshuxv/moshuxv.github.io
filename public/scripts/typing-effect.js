@@ -16,7 +16,7 @@
         { id: 'line2', key: 'translation' },
         { id: 'line3', key: 'author', prefix: '—— ' }
     ];
-    const MARGIN = 25; // 外边距（像素）
+    const MARGIN = 35; // 外边距（像素）
 
     // 核心逻辑
     async function init() {
@@ -35,7 +35,7 @@
         // 固定容器尺寸
         const container = document.getElementById('typing-container');
         if (container) {
-            container.style.width = `${containerWidth}px`;
+            container.style.width = `calc(${containerWidth}px - ${MARGIN * 2}px)`; // 减去外边距宽度
             container.style.height = `${maxHeight}px`;
             container.style.margin = `${MARGIN}px auto`; // 设置上下外边距为MARGIN，左右居中
             container.style.overflowX = 'auto'; // 当内容超过容器宽度时显示水平滚动条
