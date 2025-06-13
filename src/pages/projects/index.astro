@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets'
+
+import type { iconsType } from 'astro-pure/types'
+import { Button, Collapse, Icon } from 'astro-pure/user'
+import PageLayout from '@/layouts/CommonPage.astro'
+import ProjectSection from '@/components/projects/ProjectSection.astro'
+import Sponsors from '@/components/projects/Sponsors.astro'
+import alipay from '@/assets/alipay-qrcode.jpg'
+import wechat from '@/assets/wechat-qrcode.jpg'
+import config from '@/site-config'
+
+const headings = [
+
+  { depth: 2, slug: 'sponsorship', text: 'Sponsorship' }
+]
+---
+
+<PageLayout title='Sponsorship' {headings} info={{ slug: '/projects', hideComment: true }}>
+
+
+ 
+
+  <!-- sponsorship -->
+  
+  <p>Please leave a message or contact me proactively after sponsorship.</p>
+  <div class='flex flex-col justify-center gap-4 sm:flex-row'>
+    {
+      [
+        { name: 'WeChat', icon: 'wechat-pay', image: wechat },
+        { name: 'Alipay', icon: 'alipay', image: alipay }
+      ].map((item) => (
+        <div class='group relative justify-center overflow-hidden rounded-xl border bg-white'>
+          <div class='absolute bottom-0 end-0 start-0 top-0 flex items-center justify-center transition-opacity group-hover:opacity-0'>
+            <Icon class='size-20' name={item.icon as iconsType} />
+          </div>
+          <Image
+            class='mx-auto my-0 max-w-60 opacity-30 blur-sm transition-opacity group-hover:opacity-100 group-hover:blur-none'
+            src={item.image}
+            alt={item.name}
+            loading='lazy'
+          />
+        </div>
+      ))
+    }
+  </div>
+
+<script
+  is:inline
+  type='module'
+  data-astro-rerun
+  define:vars={{ npmCDN: config.npmCDN, walineServer: config.integ.waline.server }}
+>
+  const loadPageviewCount = async () => {
+    const pageview = await import(`${npmCDN}/@waline/client@v3/dist/pageview.js`)
+    pageview.pageviewCount({
+      serverURL: walineServer,
+      path: window.location.pathname
+    })
+  }
+
+  await loadPageviewCount()
+</script>
